@@ -545,6 +545,17 @@ header {
 	display: block;
 }
 
+/* Modal images */
+img.modal-image {
+	cursor: pointer;
+	transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+img.modal-image:hover {
+	opacity: 0.9;
+	transform: scale(1.02);
+}
+
 @keyframes fadeIn {
 	from { opacity: 0; }
 	to { opacity: 1; }
