@@ -1,0 +1,25 @@
+---
+eleventyNavigation:
+  key: home
+  order: 1
+---
+{# Display the most recent blog post #}
+{% set latestPost = collections.posts | reverse | first %}
+
+{%- if latestPost %}
+<article>
+	<h1>{{ latestPost.data.title }}</h1>
+
+	<ul class="post-metadata">
+		<li><time datetime="{{ latestPost.date | htmlDateString }}">{{ latestPost.date | readableDate }}</time></li>
+		{%- for tag in latestPost.data.tags | filterTagList %}
+		{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+		<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
+		{%- endfor %}
+	</ul>
+
+	{{ latestPost.content | safe }}
+</article>
+{%- else %}
+<p>No posts yet.</p>
+{%- endif %}

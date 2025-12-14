@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ title or metadata.title }}</title>
+		<meta name="description" content="{{ description or metadata.description }}">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+
+		{#- Add CSS to the bundle #}
+		<style>/* This is an arbitrary CSS string added to the bundle */</style>
+
+		{#- Add the contents of a file to the bundle #}
+		<style>{% include "css/index.css" %}</style>
+
+		{#- Syntax highlighting styles for code blocks #}
+		<style>{% include "node_modules/prismjs/themes/prism-okaidia.css" %}</style>
+		<style>{% include "css/prism-diff.css" %}</style>
+
+		{#- Or you can add from node_modules #}
+		{# <style>{% include "node_modules/something.css" %}</style> #}
+
+		{#- Render the CSS bundle using inlined CSS (for the fastest site performance in production) #}
+		<style>{% getBundle "css" %}</style>
+
+		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
+		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
+
+		{#- Add the heading-anchors web component to the JavaScript bundle #}
+		<script type="module">{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}</script>
+
+		{#- Theme toggle script - loaded early to prevent flash #}
+		<script src="/js/theme-toggle.js"></script>
+	</head>
+	<body>
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<div class="header-title">
+				<a href="/" class="home-link">{{ metadata.title }}</a>
+			</div>
+
+			<div class="header-nav">
+				<nav>
+					<ul class="nav">
+					{%- for entry in collections.all | eleventyNavigation %}
+						<li class="nav-item">
+							<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+						</li>
+					{%- endfor %}
+					</ul>
+				</nav>
+
+				<button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle-btn">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+				</button>
+			</div>
+		</header>
+
+		<main id="main">
+			<heading-anchors>
+				{{ content | safe }}
+			</heading-anchors>
+		</main>
+
+		<footer>
+		</footer>
+
+		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
+	</body>
+</html>
