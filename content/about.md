@@ -11,5 +11,5 @@ const eleventyNavigation = {
 - Current: software engineer
 - Previous: romance novelist
 - Next: some amalgam of both
-- Likes: HHKB, vinyl records, health, quiet
+- Likes: HHKB, vinyl, health, solitude
 - Dislikes: lack of agency, fake urgency
