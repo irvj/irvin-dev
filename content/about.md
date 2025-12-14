@@ -4,9 +4,10 @@ const eleventyNavigation = {
 	order: 2
 };
 ---
-{% include "github-profile.njk" %}
 
-# Some stuff about me
+# About
+
+{% include "github-profile.njk" %}
 
 - Current: software engineer
 - Previous: romance novelist
