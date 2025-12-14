@@ -4,9 +4,12 @@ const eleventyNavigation = {
 	order: 2
 };
 ---
-# Some things about me
+{% include "github-profile.njk" %}
 
-- Current software engineer
-- Former romance novelist
-- HHKB user
-- CLI > GUI
+# Some stuff about me
+
+- Current: software engineer
+- Previous: romance novelist
+- Next: some amalgam of both
+- Likes: HHKB, vinyl records, health, quiet
+- Dislikes: lack of agency, fake urgency

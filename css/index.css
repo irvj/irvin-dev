@@ -394,3 +394,58 @@ header {
 .post-metadata time {
 	margin-right: 1em;
 }
+
+/* GitHub Profile */
+.github-profile {
+	display: flex;
+	align-items: center;
+	gap: 1.5em;
+	padding: 1.5em;
+	margin-bottom: 2em;
+	border: 1px solid var(--border-color);
+	border-radius: 8px;
+	background-color: var(--hover-bg);
+	position: relative;
+}
+
+.github-logo {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	color: var(--text-muted);
+	opacity: 0.5;
+}
+
+.github-avatar {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.github-info {
+	flex-grow: 1;
+}
+
+.github-name {
+	margin: 0 0 0.5em 0;
+	font-size: 1.5em;
+	line-height: 1.2;
+}
+
+.github-bio {
+	margin: 0 0 0.5em 0;
+	color: var(--text-muted);
+}
+
+.github-link {
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.github-profile-loading,
+.github-error {
+	text-align: center;
+	padding: 2em;
+	color: var(--text-muted);
+}
