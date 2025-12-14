@@ -35,7 +35,9 @@ npm run benchmark
 
 - **_includes/**: Template partials and layouts
   - `layouts/`: Base layout templates (base.njk, home.njk, post.njk)
+  - `components/`: Reusable components (modal.njk)
   - `postslist.njk`: Reusable component for rendering post lists
+  - `github-profile.njk`: GitHub profile widget with API integration
 
 - **_data/**: Global data files
   - `metadata.js`: Site metadata (title, URL, author, description)
@@ -44,7 +46,10 @@ npm run benchmark
 - **_config/**: Eleventy configuration modules
   - `filters.js`: Custom template filters (date formatting, array manipulation)
 
-- **public/**: Static assets copied directly to output (CSS, fonts, images)
+- **public/**: Static assets copied directly to output
+  - `css/`: Stylesheets (index.css, message-box.css, prism-diff.css)
+  - `js/`: JavaScript files (theme-toggle.js, modal.js, image-modal.js)
+  - `favicon.svg`: Site favicon
 
 - **_site/**: Generated output directory (not tracked in git)
 
@@ -71,6 +76,25 @@ npm run benchmark
 5. **Syntax highlighting**: PrismJS via @11ty/eleventy-plugin-syntaxhighlight
 
 6. **Navigation**: Site navigation managed via @11ty/eleventy-navigation
+
+7. **View Transitions**: Cross-document view transitions enabled for smooth page navigation (50ms duration)
+
+8. **Theme System**:
+   - Light/dark mode toggle with Nord color palette
+   - Theme preference stored in localStorage
+   - Respects system `prefers-color-scheme` as default
+   - No CSS transitions on theme change (handled by View Transitions API)
+
+9. **Modal System**:
+   - Reusable modal component (`components/modal.njk`)
+   - Automatic image modals via `modal-image` class
+   - Accessible with keyboard navigation, focus trap, ESC to close
+   - Click backdrop or X button to close
+
+10. **GitHub Integration**:
+    - Dynamic GitHub profile widget on About page
+    - Fetches profile data via GitHub API
+    - Avatar image opens in modal on click
 
 ### Data Cascade
 
@@ -122,3 +146,38 @@ Place images in content directories. The image transform plugin automatically op
 ### Path Prefix for Subdirectories
 
 If deploying to a subdirectory, uncomment and set `pathPrefix` in the config object at the bottom of `eleventy.config.js`. Use with the HtmlBasePlugin to automatically transform URLs.
+
+### Using Modals
+
+**Reusable Modal Component:**
+```njk
+{% from "components/modal.njk" import modal %}
+{{ modal("modal-id", "Modal Title", "<p>Content here</p>") }}
+<button onclick="openModal('modal-id')">Open Modal</button>
+```
+
+**Automatic Image Modals:**
+Add `modal-image` class to any image to make it clickable with automatic modal:
+```html
+<img src="image.jpg" alt="Description" class="modal-image">
+```
+
+The image modal system:
+- Automatically detects all images with `modal-image` class
+- Creates unique modals for each image
+- Uses image `alt` text as modal title
+- Shows full-resolution image in modal
+- Keyboard accessible (Enter/Space to open, ESC to close)
+
+### Theme Toggle
+
+The site uses a light/dark theme toggle with Nord color palette. Theme preference is stored in localStorage and respects system `prefers-color-scheme` as the default. The toggle button is in the header.
+
+### GitHub Profile Widget
+
+The About page includes a dynamic GitHub profile widget that fetches data from the GitHub API. To use it:
+```njk
+{% include "github-profile.njk" %}
+```
+
+The widget displays the user's avatar, name, bio, and a link to their GitHub profile. The avatar image is clickable and opens in a modal.
