@@ -323,7 +323,7 @@ header {
 	width: 1.25rem;
 	height: 1.25rem;
 	stroke: var(--text-color);
-	transition: stroke 0.2s ease;
+	transition: stroke 0.5s ease;
 }
 
 .theme-toggle-btn:hover {
