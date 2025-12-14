@@ -4,44 +4,24 @@
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 }
 
-/* Theme colors - Light mode (Nord Light) */
+/* Theme colors - Dark mode default (Nord) */
 :root {
-	--background-color: #eceff4;
-	--text-color: #2e3440;
-	--text-muted: #4c566a;
+	--background-color: #2e3440;
+	--text-color: #eceff4;
+	--text-muted: #d8dee9;
 
 	--accent-frost: #88c0d0;
 	--accent-frost-dark: #5e81ac;
 	--accent-frost-light: #8fbcbb;
 
-	--border-color: #d8dee9;
-	--hover-bg: #e5e9f0;
+	--border-color: #4c566a;
+	--hover-bg: #3b4252;
 
-	--text-color-link: #5e81ac;
-	--text-color-link-active: #81a1c1;
-	--text-color-link-visited: #5e81ac;
+	--text-color-link: #88c0d0;
+	--text-color-link-active: #8fbcbb;
+	--text-color-link-visited: #88c0d0;
 
 	--syntax-tab-size: 2;
-}
-
-/* Dark mode (Nord) */
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background-color: #2e3440;
-		--text-color: #eceff4;
-		--text-muted: #d8dee9;
-
-		--accent-frost: #88c0d0;
-		--accent-frost-dark: #5e81ac;
-		--accent-frost-light: #8fbcbb;
-
-		--border-color: #4c566a;
-		--hover-bg: #3b4252;
-
-		--text-color-link: #88c0d0;
-		--text-color-link-active: #8fbcbb;
-		--text-color-link-visited: #88c0d0;
-	}
 }
 
 /* Dark mode via data attribute (JavaScript override) */
@@ -90,12 +70,6 @@
 	navigation: auto;
 }
 
-/* Customize view transition duration to match CSS transitions */
-::view-transition-old(root),
-::view-transition-new(root) {
-	animation-duration: 0.5s;
-}
-
 html,
 body {
 	padding: 0;
@@ -103,7 +77,6 @@ body {
 	font-family: var(--font-family);
 	color: var(--text-color);
 	background-color: var(--background-color);
-	transition: color 0.5s ease, background-color 0.5s ease;
 }
 html {
 	overflow-y: scroll;
@@ -189,7 +162,6 @@ article h1 {
 
 a[href] {
 	color: var(--text-color-link);
-	transition: color 0.5s ease;
 }
 a[href]:visited {
 	color: var(--text-color-link-visited);
@@ -209,7 +181,6 @@ main :first-child {
 
 header {
 	border-bottom: 1px dashed var(--border-color);
-	transition: border-color 0.5s ease;
 }
 
 #skip-link {
@@ -329,7 +300,6 @@ header {
 	width: 1.25rem;
 	height: 1.25rem;
 	stroke: var(--text-color);
-	transition: stroke 0.5s ease;
 }
 
 .theme-toggle-btn:hover {
