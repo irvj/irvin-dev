@@ -90,6 +90,12 @@
 	navigation: auto;
 }
 
+/* Customize view transition duration to match CSS transitions */
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation-duration: 0.5s;
+}
+
 html,
 body {
 	padding: 0;
