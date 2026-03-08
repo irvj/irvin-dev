@@ -1,8 +1,8 @@
 /* Message Box */
 .message-box {
 	display: block;
-	background-color: var(--message-bg);
-	color: var(--message-text);
+	background-color: var(--warning);
+	color: var(--warning-foreground);
 	padding: 1em 0.625em; /* 16px 10px /16 */
 }
 .message-box ol {

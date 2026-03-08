@@ -1,69 +1,78 @@
 /* Nord Theme */
 :root {
 	--background: #2e3440;
+	--background-secondary: #2e3440;
+	--card: #3b4252;
 	--foreground: #eceff4;
+	--foreground-secondary: #d8dee9;
 	--foreground-muted: #d8dee9;
+	--accent-foreground: #2e3440;
 
 	--accent: #88c0d0;
 	--accent-hover: #5e81ac;
-	--accent-light: #8fbcbb;
+	--ring: #8fbcbb;
+
+	--destructive: #bf616a;
+	--destructive-hover: #bf616a;
+	--warning: #5e81ac;
+	--warning-foreground: #eceff4;
 
 	--border: #4c566a;
-	--hover: #3b4252;
+	--input: #4c566a;
 
 	--link: #88c0d0;
 	--link-active: #8fbcbb;
 	--link-visited: #88c0d0;
-
-	--message-bg: #5e81ac;
-	--message-text: #eceff4;
-
-	--diff-deleted: #bf616a;
-	--diff-inserted: #a3be8c;
 }
 
 [data-theme="dark"] {
 	--background: #2e3440;
+	--background-secondary: #2e3440;
+	--card: #3b4252;
 	--foreground: #eceff4;
+	--foreground-secondary: #d8dee9;
 	--foreground-muted: #d8dee9;
+	--accent-foreground: #2e3440;
 
 	--accent: #88c0d0;
 	--accent-hover: #5e81ac;
-	--accent-light: #8fbcbb;
+	--ring: #8fbcbb;
+
+	--destructive: #bf616a;
+	--destructive-hover: #bf616a;
+	--warning: #5e81ac;
+	--warning-foreground: #eceff4;
 
 	--border: #4c566a;
-	--hover: #3b4252;
+	--input: #4c566a;
 
 	--link: #88c0d0;
 	--link-active: #8fbcbb;
 	--link-visited: #88c0d0;
-
-	--message-bg: #5e81ac;
-	--message-text: #eceff4;
-
-	--diff-deleted: #bf616a;
-	--diff-inserted: #a3be8c;
 }
 
 [data-theme="light"] {
 	--background: #eceff4;
+	--background-secondary: #e5e9f0;
+	--card: #e5e9f0;
 	--foreground: #2e3440;
+	--foreground-secondary: #4c566a;
 	--foreground-muted: #4c566a;
+	--accent-foreground: #eceff4;
 
 	--accent: #88c0d0;
 	--accent-hover: #5e81ac;
-	--accent-light: #8fbcbb;
+	--ring: #8fbcbb;
+
+	--destructive: #bf616a;
+	--destructive-hover: #bf616a;
+	--warning: #ebcb8b;
+	--warning-foreground: #2e3440;
 
 	--border: #d8dee9;
-	--hover: #e5e9f0;
+	--input: #d8dee9;
 
 	--link: #5e81ac;
 	--link-active: #81a1c1;
 	--link-visited: #5e81ac;
-
-	--message-bg: #ebcb8b;
-	--message-text: #2e3440;
-
-	--diff-deleted: #bf616a;
-	--diff-inserted: #a3be8c;
 }

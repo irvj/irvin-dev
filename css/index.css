@@ -110,11 +110,11 @@ a[href] {
 /* Heading anchor links (override web component opacity with theme color) */
 .ha-placeholder {
 	opacity: 1 !important;
-	color: var(--foreground-muted);
+	color: var(--foreground-secondary);
 }
 
 .ha {
-	color: var(--foreground-muted);
+	color: var(--foreground-secondary);
 }
 a[href]:visited {
 	color: var(--link-visited);
@@ -220,7 +220,7 @@ header {
 	text-decoration: none;
 }
 .home-link:hover {
-	background-color: var(--hover);
+	background-color: var(--card);
 	text-decoration: none;
 }
 
@@ -245,7 +245,7 @@ header {
 }
 
 .theme-toggle-btn:hover {
-	background-color: var(--hover);
+	background-color: var(--card);
 }
 
 .theme-toggle-btn:active {
@@ -268,7 +268,7 @@ header {
 	text-decoration: none;
 }
 .nav-item:hover {
-	background-color: var(--hover);
+	background-color: var(--card);
 	text-decoration: none;
 }
 .nav-item[aria-current="page"] {
@@ -290,7 +290,7 @@ header {
 .postlist-date,
 .postlist-item:before {
 	font-size: 0.8125em; /* 13px /16 */
-	color: var(--foreground-muted);
+	color: var(--foreground-secondary);
 }
 .postlist-date {
 	word-spacing: -0.5px;
@@ -342,7 +342,7 @@ header {
 	margin-bottom: 2em;
 	border: 1px solid var(--border);
 	border-radius: 8px;
-	background-color: var(--hover);
+	background-color: var(--card);
 	position: relative;
 }
 
@@ -350,7 +350,7 @@ header {
 	position: absolute;
 	top: 1em;
 	right: 1em;
-	color: var(--foreground-muted);
+	color: var(--foreground-secondary);
 	opacity: 0.5;
 }
 
@@ -380,7 +380,7 @@ header {
 
 .github-bio {
 	margin: 0 0 0.5em 0;
-	color: var(--foreground-muted);
+	color: var(--foreground-secondary);
 }
 
 .github-link {
@@ -392,7 +392,7 @@ header {
 .github-error {
 	text-align: center;
 	padding: 2em;
-	color: var(--foreground-muted);
+	color: var(--foreground-secondary);
 }
 
 /* Modal */
@@ -459,7 +459,7 @@ header {
 	border: none;
 	padding: 0.5em;
 	cursor: pointer;
-	color: var(--foreground-muted);
+	color: var(--foreground-secondary);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -468,7 +468,7 @@ header {
 }
 
 .modal-close:hover {
-	background-color: var(--hover);
+	background-color: var(--card);
 }
 
 .modal-content {
@@ -531,11 +531,11 @@ img.modal-image:hover {
 	color: var(--background);
 }
 .btn-danger {
-	background: var(--diff-deleted);
+	background: var(--destructive);
 	color: var(--background);
 }
 .btn-danger:hover {
-	background: var(--diff-deleted-hover);
+	background: var(--destructive-hover);
 }
 
 .btn-row {
@@ -547,7 +547,7 @@ img.modal-image:hover {
 
 /* Code blocks */
 pre[class*="language-"] {
-	background: var(--hover);
+	background: var(--card);
 	border: 1px solid var(--border);
 	border-radius: 6px;
 	padding: 16px;
@@ -561,10 +561,10 @@ pre[class*="language-"] code {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: var(--foreground-muted);
+	color: var(--foreground-secondary);
 }
 .token.punctuation {
-	color: var(--foreground-muted);
+	color: var(--foreground-secondary);
 }
 .token.namespace {
 	opacity: .7;
@@ -574,7 +574,7 @@ pre[class*="language-"] code {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: var(--diff-deleted);
+	color: var(--destructive);
 }
 .token.boolean,
 .token.number {
@@ -587,7 +587,7 @@ pre[class*="language-"] code {
 .token.builtin,
 .token.inserted,
 .token.triple-quoted-string {
-	color: var(--message-bg);
+	color: var(--warning);
 }
 .token.operator,
 .token.entity,
@@ -595,20 +595,20 @@ pre[class*="language-"] code {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-	color: var(--foreground-muted);
+	color: var(--foreground-secondary);
 }
 .token.atrule,
 .token.attr-value,
 .token.function,
 .token.class-name {
-	color: var(--diff-deleted);
+	color: var(--destructive);
 }
 .token.keyword {
 	color: var(--accent);
 }
 .token.regex,
 .token.important {
-	color: var(--message-bg);
+	color: var(--warning);
 }
 .token.important,
 .token.bold {
@@ -623,7 +623,7 @@ pre[class*="language-"] code {
 
 /* Inline code */
 :not(pre) > code {
-	background: var(--hover);
+	background: var(--card);
 	border: 1px solid var(--border);
 	padding: 2px 6px;
 	border-radius: 4px;
@@ -633,7 +633,7 @@ pre[class*="language-"] code {
 
 /* Blockquote */
 blockquote {
-	background: var(--hover);
+	background: var(--card);
 	color: var(--foreground);
 	border-left: 4px solid var(--accent);
 	padding: 12px 16px;

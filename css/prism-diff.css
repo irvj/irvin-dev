@@ -8,11 +8,11 @@ pre[class*="language-diff-"] {
 	padding-right: var(--eleventy-code-padding);
 }
 .token.deleted {
-	background-color: var(--diff-deleted);
+	background-color: var(--destructive);
 	color: inherit;
 }
 .token.inserted {
-	background-color: var(--diff-inserted);
+	background-color: var(--accent);
 	color: inherit;
 }
 

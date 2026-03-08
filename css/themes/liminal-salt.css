@@ -1,75 +1,78 @@
 /* Liminal Salt Theme */
 :root {
 	--background: #1a1c1b;
+	--background-secondary: #141615;
+	--card: #242726;
 	--foreground: #e8e4dc;
-	--foreground-muted: #c5c1b8;
+	--foreground-secondary: #c5c1b8;
+	--foreground-muted: #9e9b93;
+	--accent-foreground: #1a1c1b;
 
 	--accent: #8fac98;
 	--accent-hover: #a3bfac;
-	--accent-secondary: #95bebe;
-	--accent-light: #8fac98;
+	--ring: #95bebe;
+
+	--destructive: #cc8585;
+	--destructive-hover: #d99292;
+	--warning: #c9a86c;
+	--warning-foreground: #1a1c1b;
 
 	--border: #2e312f;
-	--hover: #242726;
+	--input: #6b7369;
 
 	--link: #8fac98;
 	--link-active: #a3bfac;
 	--link-visited: #8fac98;
-
-	--message-bg: #c9a86c;
-	--message-text: #1a1c1b;
-
-	--diff-deleted: #cc8585;
-	--diff-deleted-hover: #d99292;
-	--diff-inserted: #8fac98;
 }
 
 [data-theme="dark"] {
 	--background: #1a1c1b;
+	--background-secondary: #141615;
+	--card: #242726;
 	--foreground: #e8e4dc;
-	--foreground-muted: #c5c1b8;
+	--foreground-secondary: #c5c1b8;
+	--foreground-muted: #9e9b93;
+	--accent-foreground: #1a1c1b;
 
 	--accent: #8fac98;
 	--accent-hover: #a3bfac;
-	--accent-secondary: #95bebe;
-	--accent-light: #8fac98;
+	--ring: #95bebe;
+
+	--destructive: #cc8585;
+	--destructive-hover: #d99292;
+	--warning: #c9a86c;
+	--warning-foreground: #1a1c1b;
 
 	--border: #2e312f;
-	--hover: #242726;
+	--input: #6b7369;
 
 	--link: #8fac98;
 	--link-active: #a3bfac;
 	--link-visited: #8fac98;
-
-	--message-bg: #c9a86c;
-	--message-text: #1a1c1b;
-
-	--diff-deleted: #cc8585;
-	--diff-deleted-hover: #d99292;
-	--diff-inserted: #8fac98;
 }
 
 [data-theme="light"] {
 	--background: #f5f2ed;
+	--background-secondary: #ebe7e0;
+	--card: #fdfcfa;
 	--foreground: #2d2b28;
+	--foreground-secondary: #5a5753;
 	--foreground-muted: #6b6762;
+	--accent-foreground: #f5f2ed;
 
 	--accent: #506e58;
 	--accent-hover: #425f4a;
-	--accent-secondary: #3e5d5d;
-	--accent-light: #506e58;
+	--ring: #3e5d5d;
+
+	--destructive: #a54d4d;
+	--destructive-hover: #984242;
+	--warning: #7d6325;
+	--warning-foreground: #f5f2ed;
 
 	--border: #ddd8d0;
-	--hover: #ebe7e0;
+	--input: #888379;
 
 	--link: #506e58;
 	--link-active: #425f4a;
 	--link-visited: #506e58;
-
-	--message-bg: #7d6325;
-	--message-text: #f5f2ed;
-
-	--diff-deleted: #a54d4d;
-	--diff-deleted-hover: #984242;
-	--diff-inserted: #506e58;
 }

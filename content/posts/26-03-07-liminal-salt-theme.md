@@ -97,6 +97,11 @@ It's still evolving, but here's the current palette:
     <div>Warning</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#6b7369; border-radius:8px; margin:0 auto;"></div>
+    <code>#6b7369</code>
+    <div>Input</div>
+  </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#2e312f; border-radius:8px; border:1px solid #9e9b93; margin:0 auto;"></div>
     <code>#2e312f</code>
     <div>Border</div>
@@ -189,6 +194,11 @@ It's still evolving, but here's the current palette:
     <div>Warning</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#888379; border-radius:8px; margin:0 auto;"></div>
+    <code>#888379</code>
+    <div>Input</div>
+  </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#ddd8d0; border-radius:8px; border:1px solid #c5c1b8; margin:0 auto;"></div>
     <code>#ddd8d0</code>
     <div>Border</div>
@@ -212,6 +222,7 @@ All foreground/background pairings meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 
 | Destructive | 5.9 | 5.2 | 6.3 | AA |
 | Destructive Hover | 6.9 | — | — | AA |
 | Warning | 7.6 | 6.7 | 8.1 | AA-AAA |
+| Input | 3.5 | 3.1 | 3.7 | AA (non-text) |
 | Accent Foreground | 7.0 | — | — | AAA |
 
 ### Light Theme
@@ -227,6 +238,7 @@ All foreground/background pairings meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 
 | Destructive | 5.0 | 5.4 | 4.5 | AA |
 | Destructive Hover | 5.9 | — | — | AA |
 | Warning | 5.1 | 5.6 | 4.6 | AA |
+| Input | 3.4 | 3.7 | 3.1 | AA (non-text) |
 | Accent Foreground | 5.1 | — | — | AA |
 
 ## Examples
