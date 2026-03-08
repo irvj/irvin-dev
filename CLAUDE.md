@@ -41,15 +41,22 @@ npm run benchmark
 
 - **_data/**: Global data files
   - `metadata.js`: Site metadata (title, URL, author, description)
+  - `theme.js`: Active theme config — reads colors from the active theme's CSS file
   - `eleventyDataSchema.js`: Zod schema validation for front matter
 
 - **_config/**: Eleventy configuration modules
   - `filters.js`: Custom template filters (date formatting, array manipulation)
 
+- **css/**: Stylesheets (included via `{% include %}` in templates, not passthrough-copied)
+  - `index.css`: Main stylesheet using semantic CSS variables
+  - `message-box.css`: Message box styles
+  - `prism-diff.css`: Code diff highlighting styles
+  - `themes/`: Theme CSS files defining semantic color variables
+    - `nord.css`: Nord color palette
+    - `liminal-salt.css`: Liminal Salt color palette
+
 - **public/**: Static assets copied directly to output
-  - `css/`: Stylesheets (index.css, message-box.css, prism-diff.css)
   - `js/`: JavaScript files (theme-toggle.js, modal.js, image-modal.js)
-  - `favicon.svg`: Site favicon
 
 - **_site/**: Generated output directory (not tracked in git)
 
@@ -80,10 +87,13 @@ npm run benchmark
 7. **View Transitions**: Cross-document view transitions enabled for smooth page navigation (50ms duration)
 
 8. **Theme System**:
-   - Light/dark mode toggle with Nord color palette
-   - Theme preference stored in localStorage
+   - Multi-theme support with semantic CSS variables
+   - Active theme set in `_data/theme.js` (currently `"liminal-salt"`)
+   - Theme CSS files in `css/themes/` define `:root`, `[data-theme="dark"]`, and `[data-theme="light"]` blocks
+   - Light/dark mode toggle with theme preference stored in localStorage
    - Respects system `prefers-color-scheme` as default
    - No CSS transitions on theme change (handled by View Transitions API)
+   - Favicon generated at build time from theme colors (`content/favicon.njk`)
 
 9. **Modal System**:
    - Reusable modal component (`components/modal.njk`)
@@ -169,9 +179,25 @@ The image modal system:
 - Shows full-resolution image in modal
 - Keyboard accessible (Enter/Space to open, ESC to close)
 
+### Switching Themes
+
+Change the `active` variable in `_data/theme.js` to switch themes (e.g., `"nord"` or `"liminal-salt"`). The favicon and all CSS variables update automatically at build time.
+
+### Adding a New Theme
+
+1. Create a CSS file in `css/themes/` (e.g., `my-theme.css`)
+2. Define `:root`, `[data-theme="dark"]`, and `[data-theme="light"]` blocks with these semantic variables:
+   - `--background`, `--foreground`, `--foreground-muted`
+   - `--accent`, `--accent-hover`, `--accent-light`
+   - `--border`, `--hover`
+   - `--link`, `--link-active`, `--link-visited`
+   - `--message-bg`, `--message-text`
+   - `--diff-deleted`, `--diff-inserted`
+3. Set the `active` variable in `_data/theme.js` to the new theme name
+
 ### Theme Toggle
 
-The site uses a light/dark theme toggle with Nord color palette. Theme preference is stored in localStorage and respects system `prefers-color-scheme` as the default. The toggle button is in the header.
+The site uses a light/dark mode toggle. Theme preference is stored in localStorage and respects system `prefers-color-scheme` as the default. The toggle button is in the header.
 
 ### GitHub Profile Widget
 

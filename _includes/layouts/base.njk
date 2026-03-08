@@ -11,6 +11,9 @@
 		{#- Add CSS to the bundle #}
 		<style>/* This is an arbitrary CSS string added to the bundle */</style>
 
+		{#- Theme colors #}
+		<style>{% include "css/themes/" + theme.name + ".css" %}</style>
+
 		{#- Add the contents of a file to the bundle #}
 		<style>{% include "css/index.css" %}</style>
 

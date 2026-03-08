@@ -1,0 +1,69 @@
+/* Liminal Salt Theme */
+:root {
+	--background: #1a1c1b;
+	--foreground: #e8e4dc;
+	--foreground-muted: #c5c1b8;
+
+	--accent: #8fac98;
+	--accent-hover: #a3bfac;
+	--accent-light: #8fac98;
+
+	--border: #2e312f;
+	--hover: #242726;
+
+	--link: #8fac98;
+	--link-active: #a3bfac;
+	--link-visited: #8fac98;
+
+	--message-bg: #c9a86c;
+	--message-text: #1a1c1b;
+
+	--diff-deleted: #cc8585;
+	--diff-inserted: #8fac98;
+}
+
+[data-theme="dark"] {
+	--background: #1a1c1b;
+	--foreground: #e8e4dc;
+	--foreground-muted: #c5c1b8;
+
+	--accent: #8fac98;
+	--accent-hover: #a3bfac;
+	--accent-light: #8fac98;
+
+	--border: #2e312f;
+	--hover: #242726;
+
+	--link: #8fac98;
+	--link-active: #a3bfac;
+	--link-visited: #8fac98;
+
+	--message-bg: #c9a86c;
+	--message-text: #1a1c1b;
+
+	--diff-deleted: #cc8585;
+	--diff-inserted: #8fac98;
+}
+
+[data-theme="light"] {
+	--background: #f5f2ed;
+	--foreground: #2d2b28;
+	--foreground-muted: #6b6762;
+
+	--accent: #506e58;
+	--accent-hover: #425f4a;
+	--accent-light: #506e58;
+
+	--border: #ddd8d0;
+	--hover: #ebe7e0;
+
+	--link: #506e58;
+	--link-active: #425f4a;
+	--link-visited: #506e58;
+
+	--message-bg: #7d6325;
+	--message-text: #f5f2ed;
+
+	--diff-deleted: #a54d4d;
+	--diff-inserted: #506e58;
+}
