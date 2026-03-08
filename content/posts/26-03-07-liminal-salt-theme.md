@@ -221,92 +221,6 @@ All foreground/background pairings meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 
 
 Here's how the theme looks applied to common UI elements. Toggle between light and dark mode to see both variants.
 
-<style>
-.theme-examples {
-  margin-top: 16px;
-}
-.theme-examples .btn-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-.theme-examples .btn {
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  transition: background 0.15s ease;
-}
-.theme-examples .btn-primary {
-  background: var(--accent);
-  color: var(--background);
-}
-.theme-examples .btn-primary:hover {
-  background: var(--accent-hover);
-}
-.theme-examples .btn-outline {
-  background: transparent;
-  color: var(--accent);
-  border: 2px solid var(--accent);
-}
-.theme-examples .btn-outline:hover {
-  background: var(--accent);
-  color: var(--background);
-}
-.theme-examples .btn-danger {
-  background: var(--diff-deleted);
-  color: var(--background);
-}
-.theme-examples .btn-danger:hover {
-  opacity: 0.85;
-}
-.theme-examples pre[class*="language-"] {
-  background: var(--hover);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 16px;
-}
-.theme-examples pre[class*="language-"] code {
-  color: var(--foreground);
-}
-.theme-examples .token.keyword {
-  color: var(--accent);
-}
-.theme-examples .token.function {
-  color: var(--diff-deleted);
-}
-.theme-examples .token.string,
-.theme-examples .token.triple-quoted-string {
-  color: var(--message-bg);
-}
-.theme-examples .token.builtin {
-  color: var(--accent-hover);
-}
-.theme-examples .token.operator,
-.theme-examples .token.punctuation {
-  color: var(--foreground-muted);
-}
-.theme-examples :not(pre) > code {
-  background: var(--hover);
-  border: 1px solid var(--border);
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-.theme-examples blockquote {
-  background: var(--hover);
-  color: var(--foreground);
-  border-left: 4px solid var(--accent);
-  padding: 12px 16px;
-  border-radius: 4px;
-  margin: 0 0 24px;
-}
-</style>
-
-<div class="theme-examples">
-
 ### Buttons
 
 <div class="btn-row">
@@ -337,5 +251,3 @@ def liminal_salt(palette: dict) -> str:
 ### Inline Code & Links
 
 Here's some `inline code` alongside a [link to the repository](https://github.com/irvj/liminal-salt). The theme's `--accent` variable drives both the link color and the code highlight, keeping everything visually cohesive across `light` and `dark` modes.
-
-</div>

@@ -503,3 +503,138 @@ img.modal-image:hover {
 	from { transform: translateY(-20px); opacity: 0; }
 	to { transform: translateY(0); opacity: 1; }
 }
+
+/* Buttons */
+.btn {
+	padding: 10px 20px;
+	border-radius: 6px;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	border: none;
+	transition: background 0.15s ease;
+}
+.btn-primary {
+	background: var(--accent);
+	color: var(--background);
+}
+.btn-primary:hover {
+	background: var(--accent-hover);
+}
+.btn-outline {
+	background: transparent;
+	color: var(--accent);
+	border: 2px solid var(--accent);
+}
+.btn-outline:hover {
+	background: var(--accent);
+	color: var(--background);
+}
+.btn-danger {
+	background: var(--diff-deleted);
+	color: var(--background);
+}
+.btn-danger:hover {
+	background: var(--diff-deleted-hover);
+}
+
+.btn-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-bottom: 24px;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	background: var(--hover);
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	padding: 16px;
+}
+pre[class*="language-"] code {
+	color: var(--foreground);
+}
+
+/* Syntax highlighting */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--foreground-muted);
+}
+.token.punctuation {
+	color: var(--foreground-muted);
+}
+.token.namespace {
+	opacity: .7;
+}
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: var(--diff-deleted);
+}
+.token.boolean,
+.token.number {
+	color: var(--accent-hover);
+}
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted,
+.token.triple-quoted-string {
+	color: var(--message-bg);
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: var(--foreground-muted);
+}
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: var(--diff-deleted);
+}
+.token.keyword {
+	color: var(--accent);
+}
+.token.regex,
+.token.important {
+	color: var(--message-bg);
+}
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+.token.entity {
+	cursor: help;
+}
+
+/* Inline code */
+:not(pre) > code {
+	background: var(--hover);
+	border: 1px solid var(--border);
+	padding: 2px 6px;
+	border-radius: 4px;
+}
+
+/* Blockquote */
+blockquote {
+	background: var(--hover);
+	color: var(--foreground);
+	border-left: 4px solid var(--accent);
+	padding: 12px 16px;
+	border-radius: 4px;
+	margin: 0 0 24px;
+}

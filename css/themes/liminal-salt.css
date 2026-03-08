@@ -19,6 +19,7 @@
 	--message-text: #1a1c1b;
 
 	--diff-deleted: #cc8585;
+	--diff-deleted-hover: #d99292;
 	--diff-inserted: #8fac98;
 }
 
@@ -42,6 +43,7 @@
 	--message-text: #1a1c1b;
 
 	--diff-deleted: #cc8585;
+	--diff-deleted-hover: #d99292;
 	--diff-inserted: #8fac98;
 }
 
@@ -65,5 +67,6 @@
 	--message-text: #f5f2ed;
 
 	--diff-deleted: #a54d4d;
+	--diff-deleted-hover: #984242;
 	--diff-inserted: #506e58;
 }
