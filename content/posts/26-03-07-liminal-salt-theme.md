@@ -71,6 +71,11 @@ It's still evolving, but here's the current palette:
     <code>#a3bfac</code>
     <div>Accent Hover</div>
   </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#95bebe; border-radius:8px; margin:0 auto;"></div>
+    <code>#95bebe</code>
+    <div>Accent Secondary</div>
+  </div>
 </div>
 
 ### Status & Borders
@@ -158,6 +163,11 @@ It's still evolving, but here's the current palette:
     <code>#425f4a</code>
     <div>Accent Hover</div>
   </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#3e5d5d; border-radius:8px; margin:0 auto;"></div>
+    <code>#3e5d5d</code>
+    <div>Accent Secondary</div>
+  </div>
 </div>
 
 ### Status & Borders
@@ -198,6 +208,7 @@ All foreground/background pairings meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 
 | Foreground Muted | 6.2 | 5.4 | 6.5 | AA |
 | Accent | 7.0 | 6.1 | 7.4 | AA-AAA |
 | Accent Hover | 8.7 | — | — | AAA |
+| Accent Secondary | 8.5 | 7.5 | 9.0 | AAA |
 | Danger | 5.9 | 5.2 | 6.3 | AA |
 | Danger Hover | 6.9 | — | — | AA |
 | Warning | 7.6 | 6.7 | 8.1 | AA-AAA |
@@ -212,6 +223,7 @@ All foreground/background pairings meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 
 | Foreground Muted | 5.0 | 5.5 | 4.6 | AA |
 | Accent | 5.1 | 5.5 | 4.6 | AA |
 | Accent Hover | 6.3 | — | — | AA |
+| Accent Secondary | 6.4 | 7.0 | 5.8 | AA-AAA |
 | Danger | 5.0 | 5.4 | 4.5 | AA |
 | Danger Hover | 5.9 | — | — | AA |
 | Warning | 5.1 | 5.6 | 4.6 | AA |
