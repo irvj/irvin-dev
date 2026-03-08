@@ -1,12 +1,12 @@
 /* Nord Theme */
 :root {
 	--background: #2e3440;
-	--background-secondary: #2e3440;
+	--muted: #2e3440;
 	--card: #3b4252;
 	--card-foreground: #eceff4;
 	--foreground: #eceff4;
 	--foreground-secondary: #d8dee9;
-	--foreground-muted: #d8dee9;
+	--muted-foreground: #d8dee9;
 	--accent-foreground: #2e3440;
 
 	--accent: #88c0d0;
@@ -29,12 +29,12 @@
 
 [data-theme="dark"] {
 	--background: #2e3440;
-	--background-secondary: #2e3440;
+	--muted: #2e3440;
 	--card: #3b4252;
 	--card-foreground: #eceff4;
 	--foreground: #eceff4;
 	--foreground-secondary: #d8dee9;
-	--foreground-muted: #d8dee9;
+	--muted-foreground: #d8dee9;
 	--accent-foreground: #2e3440;
 
 	--accent: #88c0d0;
@@ -57,12 +57,12 @@
 
 [data-theme="light"] {
 	--background: #eceff4;
-	--background-secondary: #e5e9f0;
+	--muted: #e5e9f0;
 	--card: #e5e9f0;
 	--card-foreground: #2e3440;
 	--foreground: #2e3440;
 	--foreground-secondary: #4c566a;
-	--foreground-muted: #4c566a;
+	--muted-foreground: #4c566a;
 	--accent-foreground: #eceff4;
 
 	--accent: #88c0d0;

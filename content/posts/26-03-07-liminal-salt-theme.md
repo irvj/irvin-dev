@@ -13,7 +13,7 @@ It's still evolving, but here's the current palette:
 
 ## Dark Theme
 
-### Backgrounds
+### Base
 
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
@@ -22,10 +22,35 @@ It's still evolving, but here's the current palette:
     <div>Background</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#e8e4dc; border-radius:8px; margin:0 auto;"></div>
+    <code>#e8e4dc</code>
+    <div>Foreground</div>
+  </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#c5c1b8; border-radius:8px; margin:0 auto;"></div>
+    <code>#c5c1b8</code>
+    <div>Foreground Secondary</div>
+  </div>
+</div>
+
+### Muted
+
+<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
+  <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#141615; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
     <code>#141615</code>
-    <div>Background Secondary</div>
+    <div>Muted</div>
   </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#9e9b93; border-radius:8px; margin:0 auto;"></div>
+    <code>#9e9b93</code>
+    <div>Muted Foreground</div>
+  </div>
+</div>
+
+### Card
+
+<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#242726; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
     <code>#242726</code>
@@ -38,32 +63,7 @@ It's still evolving, but here's the current palette:
   </div>
 </div>
 
-### Foreground
-
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#e8e4dc; border-radius:8px; margin:0 auto;"></div>
-    <code>#e8e4dc</code>
-    <div>Foreground</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#c5c1b8; border-radius:8px; margin:0 auto;"></div>
-    <code>#c5c1b8</code>
-    <div>Foreground Secondary</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#9e9b93; border-radius:8px; margin:0 auto;"></div>
-    <code>#9e9b93</code>
-    <div>Foreground Muted</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#1a1c1b; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
-    <code>#1a1c1b</code>
-    <div>Accent Foreground</div>
-  </div>
-</div>
-
-### Accents & Actions
+### Accent
 
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
@@ -77,13 +77,13 @@ It's still evolving, but here's the current palette:
     <div>Accent Hover</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#95bebe; border-radius:8px; margin:0 auto;"></div>
-    <code>#95bebe</code>
-    <div>Ring</div>
+    <div style="width:80px; height:80px; background:#1a1c1b; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
+    <code>#1a1c1b</code>
+    <div>Accent Foreground</div>
   </div>
 </div>
 
-### Status & Borders
+### Destructive
 
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
@@ -101,10 +101,20 @@ It's still evolving, but here's the current palette:
     <code>#1a1c1b</code>
     <div>Destructive Foreground</div>
   </div>
+</div>
+
+### Warning & Borders
+
+<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#c9a86c; border-radius:8px; margin:0 auto;"></div>
     <code>#c9a86c</code>
     <div>Warning</div>
+  </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#95bebe; border-radius:8px; margin:0 auto;"></div>
+    <code>#95bebe</code>
+    <div>Ring</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#6b7369; border-radius:8px; margin:0 auto;"></div>
@@ -120,7 +130,7 @@ It's still evolving, but here's the current palette:
 
 ## Light Theme
 
-### Backgrounds
+### Base
 
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
@@ -129,10 +139,35 @@ It's still evolving, but here's the current palette:
     <div>Background</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#2d2b28; border-radius:8px; margin:0 auto;"></div>
+    <code>#2d2b28</code>
+    <div>Foreground</div>
+  </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#5a5753; border-radius:8px; margin:0 auto;"></div>
+    <code>#5a5753</code>
+    <div>Foreground Secondary</div>
+  </div>
+</div>
+
+### Muted
+
+<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
+  <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#ebe7e0; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
     <code>#ebe7e0</code>
-    <div>Background Secondary</div>
+    <div>Muted</div>
   </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#6b6762; border-radius:8px; margin:0 auto;"></div>
+    <code>#6b6762</code>
+    <div>Muted Foreground</div>
+  </div>
+</div>
+
+### Card
+
+<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#fdfcfa; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
     <code>#fdfcfa</code>
@@ -145,32 +180,7 @@ It's still evolving, but here's the current palette:
   </div>
 </div>
 
-### Foreground
-
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#2d2b28; border-radius:8px; margin:0 auto;"></div>
-    <code>#2d2b28</code>
-    <div>Foreground</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#5a5753; border-radius:8px; margin:0 auto;"></div>
-    <code>#5a5753</code>
-    <div>Foreground Secondary</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#6b6762; border-radius:8px; margin:0 auto;"></div>
-    <code>#6b6762</code>
-    <div>Foreground Muted</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#f5f2ed; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
-    <code>#f5f2ed</code>
-    <div>Accent Foreground</div>
-  </div>
-</div>
-
-### Accents & Actions
+### Accent
 
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
@@ -184,13 +194,13 @@ It's still evolving, but here's the current palette:
     <div>Accent Hover</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#3e5d5d; border-radius:8px; margin:0 auto;"></div>
-    <code>#3e5d5d</code>
-    <div>Ring</div>
+    <div style="width:80px; height:80px; background:#f5f2ed; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
+    <code>#f5f2ed</code>
+    <div>Accent Foreground</div>
   </div>
 </div>
 
-### Status & Borders
+### Destructive
 
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
@@ -208,10 +218,20 @@ It's still evolving, but here's the current palette:
     <code>#f5f2ed</code>
     <div>Destructive Foreground</div>
   </div>
+</div>
+
+### Warning & Borders
+
+<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#7d6325; border-radius:8px; margin:0 auto;"></div>
     <code>#7d6325</code>
     <div>Warning</div>
+  </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#3e5d5d; border-radius:8px; margin:0 auto;"></div>
+    <code>#3e5d5d</code>
+    <div>Ring</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#888379; border-radius:8px; margin:0 auto;"></div>
@@ -227,43 +247,61 @@ It's still evolving, but here's the current palette:
 
 ## Accessibility
 
-All foreground/background pairings meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 for large text). Many primary pairings exceed AAA (7:1). Contrast ratios are listed as background / card / secondary.
+All foreground/background pairings meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 for large text). Many primary pairings exceed AAA (7:1).
 
 ### Dark Theme
 
-| Token | Background | Card | Secondary | Level |
-|-------|------------|------|-----------|-------|
+#### On surfaces
+
+Contrast ratios for text and UI elements on the three surface tokens.
+
+| Token | Background | Card | Muted | Level |
+|-------|------------|------|-------|-------|
 | Foreground | 13.5 | 11.9 | 14.3 | AAA |
 | Foreground Secondary | 9.5 | 8.4 | 10.1 | AAA |
-| Foreground Muted | 6.2 | 5.4 | 6.5 | AA |
+| Muted Foreground | 6.2 | 5.4 | 6.5 | AA |
 | Accent | 7.0 | 6.1 | 7.4 | AA-AAA |
-| Accent Hover | 8.7 | — | — | AAA |
+| Accent Hover | 8.7 | 7.6 | 9.2 | AAA |
 | Ring | 8.5 | 7.5 | 9.0 | AAA |
 | Destructive | 5.9 | 5.2 | 6.3 | AA |
-| Destructive Hover | 6.9 | — | — | AA |
+| Destructive Hover | 6.9 | 6.1 | 7.3 | AA |
 | Warning | 7.6 | 6.7 | 8.1 | AA-AAA |
 | Input | 3.5 | 3.1 | 3.7 | AA (non-text) |
-| Accent Foreground | 7.0 | — | — | AAA |
-| Card Foreground | — | 11.9 | — | AAA |
-| Destructive Foreground | 5.9 | — | — | AA |
+
+#### Paired foregrounds
+
+Contrast ratios for foreground tokens measured against their own surface.
+
+| Token | Surface | Contrast | Level |
+|-------|---------|----------|-------|
+| Card Foreground | Card | 11.9 | AAA |
+| Accent Foreground | Accent | 7.0 | AAA |
+| Destructive Foreground | Destructive | 5.9 | AA |
 
 ### Light Theme
 
-| Token | Background | Card | Secondary | Level |
-|-------|------------|------|-----------|-------|
+#### On surfaces
+
+| Token | Background | Card | Muted | Level |
+|-------|------------|------|-------|-------|
 | Foreground | 12.6 | 13.8 | 11.5 | AAA |
 | Foreground Secondary | 6.4 | 7.0 | 5.8 | AA-AAA |
-| Foreground Muted | 5.0 | 5.5 | 4.6 | AA |
+| Muted Foreground | 5.0 | 5.5 | 4.6 | AA |
 | Accent | 5.1 | 5.5 | 4.6 | AA |
-| Accent Hover | 6.3 | — | — | AA |
+| Accent Hover | 6.3 | 6.9 | 5.7 | AA |
 | Ring | 6.4 | 7.0 | 5.8 | AA-AAA |
 | Destructive | 5.0 | 5.4 | 4.5 | AA |
-| Destructive Hover | 5.9 | — | — | AA |
+| Destructive Hover | 5.9 | 6.4 | 5.3 | AA |
 | Warning | 5.1 | 5.6 | 4.6 | AA |
 | Input | 3.4 | 3.7 | 3.1 | AA (non-text) |
-| Accent Foreground | 5.1 | — | — | AA |
-| Card Foreground | — | 13.8 | — | AAA |
-| Destructive Foreground | 5.0 | — | — | AA |
+
+#### Paired foregrounds
+
+| Token | Surface | Contrast | Level |
+|-------|---------|----------|-------|
+| Card Foreground | Card | 13.8 | AAA |
+| Accent Foreground | Accent | 5.1 | AA |
+| Destructive Foreground | Destructive | 5.0 | AA |
 
 ## Examples
 
