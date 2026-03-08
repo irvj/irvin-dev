@@ -112,6 +112,11 @@ It's still evolving, but here's the current palette:
     <div>Warning</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#1a1c1b; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
+    <code>#1a1c1b</code>
+    <div>Warning Foreground</div>
+  </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#95bebe; border-radius:8px; margin:0 auto;"></div>
     <code>#95bebe</code>
     <div>Ring</div>
@@ -229,6 +234,11 @@ It's still evolving, but here's the current palette:
     <div>Warning</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#f5f2ed; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
+    <code>#f5f2ed</code>
+    <div>Warning Foreground</div>
+  </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#3e5d5d; border-radius:8px; margin:0 auto;"></div>
     <code>#3e5d5d</code>
     <div>Ring</div>
@@ -277,6 +287,7 @@ Contrast ratios for foreground tokens measured against their own surface.
 | Card Foreground | Card | 11.9 | AAA |
 | Accent Foreground | Accent | 7.0 | AAA |
 | Destructive Foreground | Destructive | 5.9 | AA |
+| Warning Foreground | Warning | 7.6 | AAA |
 
 ### Light Theme
 
@@ -302,6 +313,7 @@ Contrast ratios for foreground tokens measured against their own surface.
 | Card Foreground | Card | 13.8 | AAA |
 | Accent Foreground | Accent | 5.1 | AA |
 | Destructive Foreground | Destructive | 5.0 | AA |
+| Warning Foreground | Warning | 5.1 | AA |
 
 ## Examples
 
