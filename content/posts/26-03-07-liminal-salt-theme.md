@@ -230,11 +230,11 @@ Contrast ratios for syntax highlighting tokens on the three surface tokens.
 | Keyword | 7.0 | 6.1 | 7.4 | AA-AAA |
 | Function | 8.7 | 7.6 | 9.2 | AAA |
 | String | 7.6 | 6.7 | 8.1 | AA-AAA |
-| Number | 7.1 | 6.3 | 7.5 | AAA |
-| Type | 7.8 | 6.9 | 8.3 | AAA |
+| Number | 7.8 | 6.9 | 8.3 | AA-AAA |
+| Type | 7.9 | 6.9 | 8.3 | AA-AAA |
 | Comment | 6.2 | 5.4 | 6.5 | AA |
 | Tag | 5.9 | 5.2 | 6.3 | AA |
-| Regex | 6.5 | 5.7 | 6.9 | AA |
+| Regex | 7.3 | 6.4 | 7.7 | AA-AAA |
 
 ### Light Theme
 
@@ -271,11 +271,11 @@ Contrast ratios for syntax highlighting tokens on the three surface tokens.
 | Keyword | 5.1 | 5.5 | 4.6 | AA |
 | Function | 6.3 | 6.9 | 5.7 | AA |
 | String | 5.1 | 5.6 | 4.6 | AA |
-| Number | 5.4 | 5.9 | 4.9 | AA |
-| Type | 5.0 | 5.4 | 4.5 | AA |
+| Number | 5.0 | 5.4 | 4.5 | AA |
+| Type | 5.4 | 5.9 | 4.9 | AA |
 | Comment | 5.0 | 5.5 | 4.6 | AA |
 | Tag | 5.0 | 5.4 | 4.5 | AA |
-| Regex | 5.1 | 5.6 | 4.7 | AA |
+| Regex | 5.8 | 6.4 | 5.3 | AA |
 
 ## Examples
 
@@ -306,99 +306,49 @@ Here's how the theme looks applied to common UI elements. <a href="javascript:vo
   </div>
 </div>
 
-### Code Block
+### Code Blocks
 
 ```python
-import re
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
-# A color primitive with contrast metadata
+# Minimum contrast for WCAG AA compliance
 CONTRAST_AA = 4.5
-CONTRAST_AAA = 7.0
 
 @dataclass
-class Primitive:
-    """A named color in the palette."""
+class Color:
+    """A named color primitive."""
     name: str
     value: str
     luminance: float = 0.0
-    aliases: list[str] = field(default_factory=list)
 
-    def contrast_ratio(self, other: "Primitive") -> float:
-        lighter = max(self.luminance, other.luminance)
-        darker = min(self.luminance, other.luminance)
-        return (lighter + 0.05) / (darker + 0.05)
+    def meets_aa(self, other: "Color") -> bool:
+        ratio = self.contrast(other)
+        return ratio >= CONTRAST_AA
 
-    def meets_aa(self, other: "Primitive") -> bool:
-        return self.contrast_ratio(other) >= CONTRAST_AA
+palette = {"sage": "#8fac98", "amber": "#c9a86c"}
+total = len(palette)
+is_valid = total > 0 and True
+print(f"Colors: {total}, valid={is_valid}")
+```
 
-class Palette:
-    """A collection of color primitives."""
+```html
+<div class="swatch" data-color="#8fac98">
+  <span>Sage</span>
+  <code>#8fac98</code>
+</div>
+```
 
-    def __init__(
-        self,
-        name: str,
-        primitives: dict[str, str],
-    ):
-        self.name = name
-        self._colors = {}
-        for key, value in primitives.items():
-            channels = (1, 3, 5)
-            rgb = tuple(
-                int(value[i:i + 2], 16)
-                for i in channels
-            )
-            lum = sum(v / 255 for v in rgb) / 3
-            self._colors[key] = Primitive(
-                name=key,
-                value=value,
-                luminance=lum,
-            )
+```javascript
+const HEX = /^#([a-f\d]{2}){3}$/i
 
-    def __len__(self) -> int:
-        return len(self._colors)
-
-    def __getitem__(self, key: str) -> Primitive:
-        return self._colors[key]
-
-    def find(self, pattern: str) -> list[Primitive]:
-        """Search primitives by regex pattern."""
-        regex = re.compile(pattern, re.IGNORECASE)
-        return [
-            c for c in self._colors.values()
-            if regex.search(c.name)
-        ]
-
-    def audit(self, background: str) -> dict[str, bool]:
-        bg = self._colors[background]
-        return {
-            name: color.meets_aa(bg)
-            for name, color in self._colors.items()
-            if name != background
-        }
-
-
-salt = Palette("Liminal Salt", {
-    "stone200": "#1a1c1b",
-    "beige300": "#e8e4dc",
-    "sage400": "#8fac98",
-    "amber400": "#c9a86c",
-    "blue400": "#7eb8c9",
-    "purple400": "#b0a0c8",
-})
-
-greens = salt.find(r"^sage\d+$")
-bg = salt["stone200"]
-is_valid = len(greens) > 0 and greens[0].meets_aa(bg)
-total = len(salt)
-results = salt.audit("stone200")
-passing = sum(
-    1 for v in results.values() if v is True
-)
-print(
-    f"{salt.name}: {passing}/{total - 1}"
-    f" pass AA — valid={is_valid}"
-)
+function parseHex(value) {
+  if (!HEX.test(value)) {
+    throw new Error(`Invalid: ${value}`)
+  }
+  return [1, 3, 5].map(
+    (i) => parseInt(value.slice(i, i + 2), 16)
+  )
+}
 ```
 
 ### Blockquote
