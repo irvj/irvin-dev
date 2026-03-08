@@ -309,12 +309,96 @@ Here's how the theme looks applied to common UI elements. <a href="javascript:vo
 ### Code Block
 
 ```python
-def liminal_salt(palette: dict) -> str:
-    """Apply the Liminal Salt theme to a surface."""
-    bg = palette.get("background", "#1a1c1b")
-    fg = palette.get("foreground", "#e8e4dc")
-    accent = palette.get("accent", "#8fac98")
-    return f"surface({bg}) text({fg}) accent({accent})"
+import re
+from dataclasses import dataclass, field
+
+# A color primitive with contrast metadata
+CONTRAST_AA = 4.5
+CONTRAST_AAA = 7.0
+
+@dataclass
+class Primitive:
+    """A named color in the palette."""
+    name: str
+    value: str
+    luminance: float = 0.0
+    aliases: list[str] = field(default_factory=list)
+
+    def contrast_ratio(self, other: "Primitive") -> float:
+        lighter = max(self.luminance, other.luminance)
+        darker = min(self.luminance, other.luminance)
+        return (lighter + 0.05) / (darker + 0.05)
+
+    def meets_aa(self, other: "Primitive") -> bool:
+        return self.contrast_ratio(other) >= CONTRAST_AA
+
+class Palette:
+    """A collection of color primitives."""
+
+    def __init__(
+        self,
+        name: str,
+        primitives: dict[str, str],
+    ):
+        self.name = name
+        self._colors = {}
+        for key, value in primitives.items():
+            channels = (1, 3, 5)
+            rgb = tuple(
+                int(value[i:i + 2], 16)
+                for i in channels
+            )
+            lum = sum(v / 255 for v in rgb) / 3
+            self._colors[key] = Primitive(
+                name=key,
+                value=value,
+                luminance=lum,
+            )
+
+    def __len__(self) -> int:
+        return len(self._colors)
+
+    def __getitem__(self, key: str) -> Primitive:
+        return self._colors[key]
+
+    def find(self, pattern: str) -> list[Primitive]:
+        """Search primitives by regex pattern."""
+        regex = re.compile(pattern, re.IGNORECASE)
+        return [
+            c for c in self._colors.values()
+            if regex.search(c.name)
+        ]
+
+    def audit(self, background: str) -> dict[str, bool]:
+        bg = self._colors[background]
+        return {
+            name: color.meets_aa(bg)
+            for name, color in self._colors.items()
+            if name != background
+        }
+
+
+salt = Palette("Liminal Salt", {
+    "stone200": "#1a1c1b",
+    "beige300": "#e8e4dc",
+    "sage400": "#8fac98",
+    "amber400": "#c9a86c",
+    "blue400": "#7eb8c9",
+    "purple400": "#b0a0c8",
+})
+
+greens = salt.find(r"^sage\d+$")
+bg = salt["stone200"]
+is_valid = len(greens) > 0 and greens[0].meets_aa(bg)
+total = len(salt)
+results = salt.audit("stone200")
+passing = sum(
+    1 for v in results.values() if v is True
+)
+print(
+    f"{salt.name}: {passing}/{total - 1}"
+    f" pass AA — valid={is_valid}"
+)
 ```
 
 ### Blockquote
