@@ -282,10 +282,10 @@ Contrast ratios for text and UI elements on the three surface tokens.
 | Muted Foreground | 6.2 | 5.4 | 6.5 | AA |
 | Accent | 7.0 | 6.1 | 7.4 | AA-AAA |
 | Accent Hover | 8.7 | 7.6 | 9.2 | AAA |
-| Ring | 8.5 | 7.5 | 9.0 | AAA |
 | Destructive | 5.9 | 5.2 | 6.3 | AA |
 | Destructive Hover | 6.9 | 6.1 | 7.3 | AA |
 | Warning | 7.6 | 6.7 | 8.1 | AA-AAA |
+| Ring | 8.5 | 7.5 | 9.0 | AAA |
 | Input | 3.5 | 3.1 | 3.7 | AA (non-text) |
 
 #### Paired foregrounds
@@ -310,10 +310,10 @@ Contrast ratios for foreground tokens measured against their own surface.
 | Muted Foreground | 5.0 | 5.5 | 4.6 | AA |
 | Accent | 5.1 | 5.5 | 4.6 | AA |
 | Accent Hover | 6.3 | 6.9 | 5.7 | AA |
-| Ring | 6.4 | 7.0 | 5.8 | AA-AAA |
 | Destructive | 5.0 | 5.4 | 4.5 | AA |
 | Destructive Hover | 5.9 | 6.4 | 5.3 | AA |
 | Warning | 5.1 | 5.6 | 4.6 | AA |
+| Ring | 6.4 | 7.0 | 5.8 | AA-AAA |
 | Input | 3.4 | 3.7 | 3.1 | AA (non-text) |
 
 #### Paired foregrounds
