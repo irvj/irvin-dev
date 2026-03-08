@@ -10,6 +10,8 @@ permalink: /posts/liminal-salt-theme/
 {% set l = liminalSalt.ui.light %}
 {% set sd = liminalSalt.syntax.dark %}
 {% set sl = liminalSalt.syntax.light %}
+{% set ed = liminalSalt.editor.dark %}
+{% set el = liminalSalt.editor.light %}
 
 <a href="https://github.com/irvj/liminal-salt" target="_blank">Liminal Salt</a> is an LLM frontend for OpenRouter that I built in Python and Django, but it also spawned a color theme that I've been using for various projects. The overall aesthetic is kind of a muted beige/sage milieu.
 
@@ -110,6 +112,29 @@ Colors for code highlighting — keywords, strings, types, and other language co
   {{ swatch(sd.regex, "Regex") }}
 </div>
 
+### Editor
+
+Colors for editor chrome — cursor, selection, line highlighting, gutter, and diff backgrounds. These are the tinted surfaces used in code editors and IDEs.
+
+<div class="swatch-row">
+  {{ swatch(ed.cursor, "Cursor") }}
+  {{ swatch(ed.selection, "Selection", bordered=true) }}
+  {{ swatch(ed.lineHighlight, "Line Highlight", bordered=true) }}
+  {{ swatch(ed.findMatch, "Find Match", bordered=true) }}
+</div>
+
+<div class="swatch-row">
+  {{ swatch(ed.gutterForeground, "Gutter") }}
+  {{ swatch(ed.gutterActiveForeground, "Gutter Active") }}
+  {{ swatch(ed.bracketMatch, "Bracket Match", bordered=true) }}
+  {{ swatch(ed.indentGuide, "Indent Guide", bordered=true) }}
+</div>
+
+<div class="swatch-row">
+  {{ swatch(ed.diffDeletedBackground, "Diff Deleted", bordered=true) }}
+  {{ swatch(ed.diffInsertedBackground, "Diff Inserted", bordered=true) }}
+</div>
+
 ## Light Theme
 
 ### Base
@@ -185,6 +210,27 @@ Colors for code highlighting — keywords, strings, types, and other language co
   {{ swatch(sl.regex, "Regex") }}
 </div>
 
+### Editor
+
+<div class="swatch-row">
+  {{ swatch(el.cursor, "Cursor") }}
+  {{ swatch(el.selection, "Selection", bordered=true) }}
+  {{ swatch(el.lineHighlight, "Line Highlight", bordered=true) }}
+  {{ swatch(el.findMatch, "Find Match", bordered=true) }}
+</div>
+
+<div class="swatch-row">
+  {{ swatch(el.gutterForeground, "Gutter") }}
+  {{ swatch(el.gutterActiveForeground, "Gutter Active") }}
+  {{ swatch(el.bracketMatch, "Bracket Match", bordered=true) }}
+  {{ swatch(el.indentGuide, "Indent Guide", bordered=true) }}
+</div>
+
+<div class="swatch-row">
+  {{ swatch(el.diffDeletedBackground, "Diff Deleted", bordered=true) }}
+  {{ swatch(el.diffInsertedBackground, "Diff Inserted", bordered=true) }}
+</div>
+
 ## Accessibility
 
 All foreground/background pairings meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 for large text). Many primary pairings exceed AAA (7:1).
@@ -236,6 +282,24 @@ Contrast ratios for syntax highlighting tokens on the three surface tokens.
 | Tag | 5.9 | 5.2 | 6.3 | AA |
 | Regex | 7.3 | 6.4 | 7.7 | AA-AAA |
 
+#### Editor chrome
+
+Contrast ratios for editor text elements on background, and foreground text readability on tinted highlight surfaces.
+
+| Token | On Background | Level |
+|-------|---------------|-------|
+| Cursor | 7.0 | AAA |
+| Gutter | 6.2 | AA |
+| Gutter Active | 9.5 | AAA |
+
+| Token | Foreground on surface | Level |
+|-------|----------------------|-------|
+| Selection | 7.6 | AAA |
+| Line Highlight | 9.0 | AAA |
+| Find Match | 7.3 | AAA |
+| Diff Deleted | 8.1 | AAA |
+| Diff Inserted | 7.4 | AAA |
+
 ### Light Theme
 
 #### On surfaces
@@ -276,6 +340,22 @@ Contrast ratios for syntax highlighting tokens on the three surface tokens.
 | Comment | 5.0 | 5.5 | 4.6 | AA |
 | Tag | 5.0 | 5.4 | 4.5 | AA |
 | Regex | 5.8 | 6.4 | 5.3 | AA |
+
+#### Editor chrome
+
+| Token | On Background | Level |
+|-------|---------------|-------|
+| Cursor | 5.1 | AA |
+| Gutter | 5.0 | AA |
+| Gutter Active | 6.4 | AA |
+
+| Token | Foreground on surface | Level |
+|-------|----------------------|-------|
+| Selection | 8.4 | AAA |
+| Line Highlight | 9.5 | AAA |
+| Find Match | 8.4 | AAA |
+| Diff Deleted | 8.4 | AAA |
+| Diff Inserted | 8.4 | AAA |
 
 ## Examples
 

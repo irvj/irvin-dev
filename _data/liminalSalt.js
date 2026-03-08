@@ -58,6 +58,20 @@ const primitives = {
 	// Orange
 	orange400: "#c9956c",
 	orange700: "#8a5c30",
+
+	// Tinted backgrounds (dark)
+	sageTint30: "#3d4741",
+	beigeTint15: "#393a38",
+	amberTint30: "#4f4633",
+	redTint30: "#4f3c3b",
+	greenTint30: "#384b3c",
+
+	// Tinted backgrounds (light)
+	sageTint30L: "#c4cac0",
+	beigeTint15L: "#d7d4cf",
+	amberTint30L: "#d1c7b1",
+	redTint30L: "#ddc1bd",
+	greenTint30L: "#bdccbb",
 };
 
 const ui = {
@@ -152,6 +166,37 @@ const syntax = {
 	},
 };
 
+const editor = {
+	dark: {
+		cursor: "sage400",
+		cursorForeground: "stone200",
+		selection: "sageTint30",
+		lineHighlight: "beigeTint15",
+		findMatch: "amberTint30",
+		gutterForeground: "beige600",
+		gutterActiveForeground: "beige500",
+		bracketMatch: "stone50",
+		indentGuide: "stone50",
+		whitespace: "stone50",
+		diffDeletedBackground: "redTint30",
+		diffInsertedBackground: "greenTint30",
+	},
+	light: {
+		cursor: "sage700",
+		cursorForeground: "beige100",
+		selection: "sageTint30L",
+		lineHighlight: "beigeTint15L",
+		findMatch: "amberTint30L",
+		gutterForeground: "beige800",
+		gutterActiveForeground: "beige900",
+		bracketMatch: "beige400",
+		indentGuide: "beige400",
+		whitespace: "beige400",
+		diffDeletedBackground: "redTint30L",
+		diffInsertedBackground: "greenTint30L",
+	},
+};
+
 const ansi = {
 	dark: {
 		black: "stone300",
@@ -213,7 +258,8 @@ export default {
 	primitives,
 	ui: { dark: resolveMap(ui.dark), light: resolveMap(ui.light) },
 	syntax: { dark: resolveMap(syntax.dark), light: resolveMap(syntax.light) },
+	editor: { dark: resolveMap(editor.dark), light: resolveMap(editor.light) },
 	ansi: { dark: resolveMap(ansi.dark), light: resolveMap(ansi.light) },
 	// Also export raw references for tooling that needs primitive names
-	refs: { ui, syntax, ansi },
+	refs: { ui, syntax, editor, ansi },
 };
