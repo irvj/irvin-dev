@@ -103,6 +103,21 @@ It's still evolving, but here's the current palette:
   </div>
 </div>
 
+### Success
+
+<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
+  <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#7dba8a; border-radius:8px; margin:0 auto;"></div>
+    <code>#7dba8a</code>
+    <div>Success</div>
+  </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#1a1c1b; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
+    <code>#1a1c1b</code>
+    <div>Success Foreground</div>
+  </div>
+</div>
+
 ### Warning
 
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
@@ -230,6 +245,21 @@ It's still evolving, but here's the current palette:
   </div>
 </div>
 
+### Success
+
+<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
+  <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#3a7346; border-radius:8px; margin:0 auto;"></div>
+    <code>#3a7346</code>
+    <div>Success</div>
+  </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#f5f2ed; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
+    <code>#f5f2ed</code>
+    <div>Success Foreground</div>
+  </div>
+</div>
+
 ### Warning
 
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
@@ -284,6 +314,7 @@ Contrast ratios for text and UI elements on the three surface tokens.
 | Accent Hover | 8.7 | 7.6 | 9.2 | AAA |
 | Destructive | 5.9 | 5.2 | 6.3 | AA |
 | Destructive Hover | 6.9 | 6.1 | 7.3 | AA |
+| Success | 7.6 | 6.6 | 8.0 | AA-AAA |
 | Warning | 7.6 | 6.7 | 8.1 | AA-AAA |
 | Ring | 8.5 | 7.5 | 9.0 | AAA |
 | Input | 3.5 | 3.1 | 3.7 | AA (non-text) |
@@ -297,6 +328,7 @@ Contrast ratios for foreground tokens measured against their own surface.
 | Card Foreground | Card | 11.9 | AAA |
 | Accent Foreground | Accent | 7.0 | AAA |
 | Destructive Foreground | Destructive | 5.9 | AA |
+| Success Foreground | Success | 7.6 | AAA |
 | Warning Foreground | Warning | 7.6 | AAA |
 
 ### Light Theme
@@ -312,6 +344,7 @@ Contrast ratios for foreground tokens measured against their own surface.
 | Accent Hover | 6.3 | 6.9 | 5.7 | AA |
 | Destructive | 5.0 | 5.4 | 4.5 | AA |
 | Destructive Hover | 5.9 | 6.4 | 5.3 | AA |
+| Success | 5.1 | 5.5 | 4.6 | AA |
 | Warning | 5.1 | 5.6 | 4.6 | AA |
 | Ring | 6.4 | 7.0 | 5.8 | AA-AAA |
 | Input | 3.4 | 3.7 | 3.1 | AA (non-text) |
@@ -323,6 +356,7 @@ Contrast ratios for foreground tokens measured against their own surface.
 | Card Foreground | Card | 13.8 | AAA |
 | Accent Foreground | Accent | 5.1 | AA |
 | Destructive Foreground | Destructive | 5.0 | AA |
+| Success Foreground | Success | 5.1 | AA |
 | Warning Foreground | Warning | 5.1 | AA |
 
 ## Examples
