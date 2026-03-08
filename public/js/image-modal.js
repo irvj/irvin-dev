@@ -9,7 +9,7 @@
 			img.setAttribute('data-modal-initialized', 'true');
 
 			const modalId = `image-modal-${Date.now()}-${index}`;
-			const title = img.alt || img.src.split('/').pop().split('?')[0]; // Use alt text or filename
+			const title = img.dataset.modalTitle || img.alt || img.src.split('/').pop().split('?')[0];
 			const imageSrc = img.src;
 
 			// Make image clickable
