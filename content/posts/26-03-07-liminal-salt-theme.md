@@ -103,7 +103,7 @@ It's still evolving, but here's the current palette:
   </div>
 </div>
 
-### Warning & Borders
+### Warning
 
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
@@ -116,6 +116,11 @@ It's still evolving, but here's the current palette:
     <code>#1a1c1b</code>
     <div>Warning Foreground</div>
   </div>
+</div>
+
+### Borders & Focus
+
+<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#95bebe; border-radius:8px; margin:0 auto;"></div>
     <code>#95bebe</code>
@@ -225,7 +230,7 @@ It's still evolving, but here's the current palette:
   </div>
 </div>
 
-### Warning & Borders
+### Warning
 
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
@@ -238,6 +243,11 @@ It's still evolving, but here's the current palette:
     <code>#f5f2ed</code>
     <div>Warning Foreground</div>
   </div>
+</div>
+
+### Borders & Focus
+
+<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#3e5d5d; border-radius:8px; margin:0 auto;"></div>
     <code>#3e5d5d</code>
