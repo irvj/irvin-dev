@@ -1,4 +1,4 @@
-/* Liminal Salt Theme */
+/* Liminal Salt Theme — generated from _data/liminalSalt.js */
 :root {
 	--background: #1a1c1b;
 	--muted: #141615;
@@ -16,6 +16,8 @@
 	--destructive: #cc8585;
 	--destructive-hover: #d99292;
 	--destructive-foreground: #1a1c1b;
+	--success: #7dba8a;
+	--success-foreground: #1a1c1b;
 	--warning: #c9a86c;
 	--warning-foreground: #1a1c1b;
 
@@ -25,6 +27,24 @@
 	--link: #8fac98;
 	--link-active: #a3bfac;
 	--link-visited: #8fac98;
+
+	/* Syntax highlighting */
+	--syntax-comment: #9e9b93;
+	--syntax-punctuation: #c5c1b8;
+	--syntax-keyword: #8fac98;
+	--syntax-function: #a3bfac;
+	--syntax-string: #c9a86c;
+	--syntax-number: #b0a0c8;
+	--syntax-type: #7eb8c9;
+	--syntax-variable: #e8e4dc;
+	--syntax-constant: #b0a0c8;
+	--syntax-operator: #c5c1b8;
+	--syntax-tag: #cc8585;
+	--syntax-attribute: #c9a86c;
+	--syntax-regex: #c9956c;
+	--syntax-escape: #c9956c;
+	--syntax-deleted: #cc8585;
+	--syntax-inserted: #7dba8a;
 }
 
 [data-theme="dark"] {
@@ -44,6 +64,8 @@
 	--destructive: #cc8585;
 	--destructive-hover: #d99292;
 	--destructive-foreground: #1a1c1b;
+	--success: #7dba8a;
+	--success-foreground: #1a1c1b;
 	--warning: #c9a86c;
 	--warning-foreground: #1a1c1b;
 
@@ -53,6 +75,24 @@
 	--link: #8fac98;
 	--link-active: #a3bfac;
 	--link-visited: #8fac98;
+
+	/* Syntax highlighting */
+	--syntax-comment: #9e9b93;
+	--syntax-punctuation: #c5c1b8;
+	--syntax-keyword: #8fac98;
+	--syntax-function: #a3bfac;
+	--syntax-string: #c9a86c;
+	--syntax-number: #b0a0c8;
+	--syntax-type: #7eb8c9;
+	--syntax-variable: #e8e4dc;
+	--syntax-constant: #b0a0c8;
+	--syntax-operator: #c5c1b8;
+	--syntax-tag: #cc8585;
+	--syntax-attribute: #c9a86c;
+	--syntax-regex: #c9956c;
+	--syntax-escape: #c9956c;
+	--syntax-deleted: #cc8585;
+	--syntax-inserted: #7dba8a;
 }
 
 [data-theme="light"] {
@@ -72,6 +112,8 @@
 	--destructive: #a54d4d;
 	--destructive-hover: #984242;
 	--destructive-foreground: #f5f2ed;
+	--success: #3a7346;
+	--success-foreground: #f5f2ed;
 	--warning: #7d6325;
 	--warning-foreground: #f5f2ed;
 
@@ -81,4 +123,22 @@
 	--link: #506e58;
 	--link-active: #425f4a;
 	--link-visited: #506e58;
+
+	/* Syntax highlighting */
+	--syntax-comment: #6b6762;
+	--syntax-punctuation: #5a5753;
+	--syntax-keyword: #506e58;
+	--syntax-function: #425f4a;
+	--syntax-string: #7d6325;
+	--syntax-number: #6b5a8a;
+	--syntax-type: #3a6f80;
+	--syntax-variable: #2d2b28;
+	--syntax-constant: #6b5a8a;
+	--syntax-operator: #5a5753;
+	--syntax-tag: #a54d4d;
+	--syntax-attribute: #7d6325;
+	--syntax-regex: #8a5c30;
+	--syntax-escape: #8a5c30;
+	--syntax-deleted: #a54d4d;
+	--syntax-inserted: #3a7346;
 }

@@ -1,17 +1,16 @@
-import { readFileSync } from "fs";
+import liminalSalt from "./liminalSalt.js";
 
 const active = "liminal-salt";
 
-const css = readFileSync(`css/themes/${active}.css`, "utf-8");
-const rootBlock = css.match(/:root\s*\{([^}]+)\}/)?.[1] || "";
+// Map theme names to their data modules
+const themes = {
+	"liminal-salt": liminalSalt,
+};
 
-function getVar(name) {
-	const match = rootBlock.match(new RegExp(`--${name}:\\s*([^;]+)`));
-	return match?.[1].trim();
-}
+const data = themes[active];
 
 export default {
 	name: active,
-	accent: getVar("accent"),
-	background: getVar("background"),
+	accent: data?.ui.dark.accent,
+	background: data?.ui.dark.background,
 };

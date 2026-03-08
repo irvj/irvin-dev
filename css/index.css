@@ -598,24 +598,26 @@ pre[class*="language-"] code {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: var(--foreground-secondary);
+	color: var(--syntax-comment, var(--foreground-secondary));
 }
 .token.punctuation {
-	color: var(--foreground-secondary);
+	color: var(--syntax-punctuation, var(--foreground-secondary));
 }
 .token.namespace {
 	opacity: .7;
 }
 .token.property,
 .token.tag,
-.token.constant,
 .token.symbol,
 .token.deleted {
-	color: var(--destructive);
+	color: var(--syntax-tag, var(--destructive));
+}
+.token.constant {
+	color: var(--syntax-constant, var(--destructive));
 }
 .token.boolean,
 .token.number {
-	color: var(--accent-hover);
+	color: var(--syntax-number, var(--accent-hover));
 }
 .token.selector,
 .token.attr-name,
@@ -624,28 +626,42 @@ pre[class*="language-"] code {
 .token.builtin,
 .token.inserted,
 .token.triple-quoted-string {
-	color: var(--warning);
+	color: var(--syntax-string, var(--warning));
+}
+.token.attr-name {
+	color: var(--syntax-attribute, var(--warning));
+}
+.token.inserted {
+	color: var(--syntax-inserted, var(--warning));
+}
+.token.deleted {
+	color: var(--syntax-deleted, var(--destructive));
 }
 .token.operator,
 .token.entity,
 .token.url,
 .language-css .token.string,
-.style .token.string,
+.style .token.string {
+	color: var(--syntax-operator, var(--foreground-secondary));
+}
 .token.variable {
-	color: var(--foreground-secondary);
+	color: var(--syntax-variable, var(--foreground-secondary));
 }
 .token.atrule,
 .token.attr-value,
 .token.function,
 .token.class-name {
-	color: var(--destructive);
+	color: var(--syntax-function, var(--destructive));
+}
+.token.class-name {
+	color: var(--syntax-type, var(--destructive));
 }
 .token.keyword {
-	color: var(--accent);
+	color: var(--syntax-keyword, var(--accent));
 }
 .token.regex,
 .token.important {
-	color: var(--warning);
+	color: var(--syntax-regex, var(--warning));
 }
 .token.important,
 .token.bold {
