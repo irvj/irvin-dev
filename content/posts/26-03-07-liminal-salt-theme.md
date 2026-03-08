@@ -31,6 +31,11 @@ It's still evolving, but here's the current palette:
     <code>#242726</code>
     <div>Card</div>
   </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#e8e4dc; border-radius:8px; margin:0 auto;"></div>
+    <code>#e8e4dc</code>
+    <div>Card Foreground</div>
+  </div>
 </div>
 
 ### Foreground
@@ -92,6 +97,11 @@ It's still evolving, but here's the current palette:
     <div>Destructive Hover</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#1a1c1b; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
+    <code>#1a1c1b</code>
+    <div>Destructive Foreground</div>
+  </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#c9a86c; border-radius:8px; margin:0 auto;"></div>
     <code>#c9a86c</code>
     <div>Warning</div>
@@ -127,6 +137,11 @@ It's still evolving, but here's the current palette:
     <div style="width:80px; height:80px; background:#fdfcfa; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
     <code>#fdfcfa</code>
     <div>Card</div>
+  </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#2d2b28; border-radius:8px; margin:0 auto;"></div>
+    <code>#2d2b28</code>
+    <div>Card Foreground</div>
   </div>
 </div>
 
@@ -189,6 +204,11 @@ It's still evolving, but here's the current palette:
     <div>Destructive Hover</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
+    <div style="width:80px; height:80px; background:#f5f2ed; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
+    <code>#f5f2ed</code>
+    <div>Destructive Foreground</div>
+  </div>
+  <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#7d6325; border-radius:8px; margin:0 auto;"></div>
     <code>#7d6325</code>
     <div>Warning</div>
@@ -224,6 +244,8 @@ All foreground/background pairings meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 
 | Warning | 7.6 | 6.7 | 8.1 | AA-AAA |
 | Input | 3.5 | 3.1 | 3.7 | AA (non-text) |
 | Accent Foreground | 7.0 | — | — | AAA |
+| Card Foreground | — | 11.9 | — | AAA |
+| Destructive Foreground | 5.9 | — | — | AA |
 
 ### Light Theme
 
@@ -240,6 +262,8 @@ All foreground/background pairings meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 
 | Warning | 5.1 | 5.6 | 4.6 | AA |
 | Input | 3.4 | 3.7 | 3.1 | AA (non-text) |
 | Accent Foreground | 5.1 | — | — | AA |
+| Card Foreground | — | 13.8 | — | AAA |
+| Destructive Foreground | 5.0 | — | — | AA |
 
 ## Examples
 
