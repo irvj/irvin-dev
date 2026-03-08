@@ -13,23 +13,23 @@ It's still evolving, but here's the current palette:
 
 ## Dark Theme
 
-### Surfaces
+### Backgrounds
 
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#1a1c1b; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
     <code>#1a1c1b</code>
-    <div>Surface</div>
+    <div>Background</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#141615; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
     <code>#141615</code>
-    <div>Surface Secondary</div>
+    <div>Background Secondary</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#242726; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
     <code>#242726</code>
-    <div>Surface Elevated</div>
+    <div>Card</div>
   </div>
 </div>
 
@@ -44,17 +44,17 @@ It's still evolving, but here's the current palette:
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#c5c1b8; border-radius:8px; margin:0 auto;"></div>
     <code>#c5c1b8</code>
-    <div>Secondary</div>
+    <div>Foreground Secondary</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#9e9b93; border-radius:8px; margin:0 auto;"></div>
     <code>#9e9b93</code>
-    <div>Muted</div>
+    <div>Foreground Muted</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#1a1c1b; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
     <code>#1a1c1b</code>
-    <div>On Accent</div>
+    <div>Accent Foreground</div>
   </div>
 </div>
 
@@ -74,7 +74,7 @@ It's still evolving, but here's the current palette:
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#95bebe; border-radius:8px; margin:0 auto;"></div>
     <code>#95bebe</code>
-    <div>Accent Secondary</div>
+    <div>Ring</div>
   </div>
 </div>
 
@@ -84,12 +84,12 @@ It's still evolving, but here's the current palette:
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#cc8585; border-radius:8px; margin:0 auto;"></div>
     <code>#cc8585</code>
-    <div>Danger</div>
+    <div>Destructive</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#d99292; border-radius:8px; margin:0 auto;"></div>
     <code>#d99292</code>
-    <div>Danger Hover</div>
+    <div>Destructive Hover</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#c9a86c; border-radius:8px; margin:0 auto;"></div>
@@ -105,23 +105,23 @@ It's still evolving, but here's the current palette:
 
 ## Light Theme
 
-### Surfaces
+### Backgrounds
 
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#f5f2ed; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
     <code>#f5f2ed</code>
-    <div>Surface</div>
+    <div>Background</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#ebe7e0; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
     <code>#ebe7e0</code>
-    <div>Surface Secondary</div>
+    <div>Background Secondary</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#fdfcfa; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
     <code>#fdfcfa</code>
-    <div>Surface Elevated</div>
+    <div>Card</div>
   </div>
 </div>
 
@@ -136,17 +136,17 @@ It's still evolving, but here's the current palette:
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#5a5753; border-radius:8px; margin:0 auto;"></div>
     <code>#5a5753</code>
-    <div>Secondary</div>
+    <div>Foreground Secondary</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#6b6762; border-radius:8px; margin:0 auto;"></div>
     <code>#6b6762</code>
-    <div>Muted</div>
+    <div>Foreground Muted</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#f5f2ed; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
     <code>#f5f2ed</code>
-    <div>On Accent</div>
+    <div>Accent Foreground</div>
   </div>
 </div>
 
@@ -166,7 +166,7 @@ It's still evolving, but here's the current palette:
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#3e5d5d; border-radius:8px; margin:0 auto;"></div>
     <code>#3e5d5d</code>
-    <div>Accent Secondary</div>
+    <div>Ring</div>
   </div>
 </div>
 
@@ -176,12 +176,12 @@ It's still evolving, but here's the current palette:
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#a54d4d; border-radius:8px; margin:0 auto;"></div>
     <code>#a54d4d</code>
-    <div>Danger</div>
+    <div>Destructive</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#984242; border-radius:8px; margin:0 auto;"></div>
     <code>#984242</code>
-    <div>Danger Hover</div>
+    <div>Destructive Hover</div>
   </div>
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#7d6325; border-radius:8px; margin:0 auto;"></div>
@@ -197,37 +197,37 @@ It's still evolving, but here's the current palette:
 
 ## Accessibility
 
-All foreground/background pairings meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 for large text). Many primary pairings exceed AAA (7:1). Contrast ratios are listed as surface / elevated / secondary.
+All foreground/background pairings meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 for large text). Many primary pairings exceed AAA (7:1). Contrast ratios are listed as background / card / secondary.
 
 ### Dark Theme
 
-| Token | Surface | Elevated | Secondary | Level |
-|-------|---------|----------|-----------|-------|
+| Token | Background | Card | Secondary | Level |
+|-------|------------|------|-----------|-------|
 | Foreground | 13.5 | 11.9 | 14.3 | AAA |
 | Foreground Secondary | 9.5 | 8.4 | 10.1 | AAA |
 | Foreground Muted | 6.2 | 5.4 | 6.5 | AA |
 | Accent | 7.0 | 6.1 | 7.4 | AA-AAA |
 | Accent Hover | 8.7 | — | — | AAA |
-| Accent Secondary | 8.5 | 7.5 | 9.0 | AAA |
-| Danger | 5.9 | 5.2 | 6.3 | AA |
-| Danger Hover | 6.9 | — | — | AA |
+| Ring | 8.5 | 7.5 | 9.0 | AAA |
+| Destructive | 5.9 | 5.2 | 6.3 | AA |
+| Destructive Hover | 6.9 | — | — | AA |
 | Warning | 7.6 | 6.7 | 8.1 | AA-AAA |
-| On Accent | 7.0 | — | — | AAA |
+| Accent Foreground | 7.0 | — | — | AAA |
 
 ### Light Theme
 
-| Token | Surface | Elevated | Secondary | Level |
-|-------|---------|----------|-----------|-------|
+| Token | Background | Card | Secondary | Level |
+|-------|------------|------|-----------|-------|
 | Foreground | 12.6 | 13.8 | 11.5 | AAA |
 | Foreground Secondary | 6.4 | 7.0 | 5.8 | AA-AAA |
 | Foreground Muted | 5.0 | 5.5 | 4.6 | AA |
 | Accent | 5.1 | 5.5 | 4.6 | AA |
 | Accent Hover | 6.3 | — | — | AA |
-| Accent Secondary | 6.4 | 7.0 | 5.8 | AA-AAA |
-| Danger | 5.0 | 5.4 | 4.5 | AA |
-| Danger Hover | 5.9 | — | — | AA |
+| Ring | 6.4 | 7.0 | 5.8 | AA-AAA |
+| Destructive | 5.0 | 5.4 | 4.5 | AA |
+| Destructive Hover | 5.9 | — | — | AA |
 | Warning | 5.1 | 5.6 | 4.6 | AA |
-| On Accent | 5.1 | — | — | AA |
+| Accent Foreground | 5.1 | — | — | AA |
 
 ## Examples
 
@@ -238,7 +238,7 @@ Here's how the theme looks applied to common UI elements. <a href="javascript:vo
 <div class="btn-row">
   <button class="btn btn-primary">Primary</button>
   <button class="btn btn-outline">Outline</button>
-  <button class="btn btn-danger">Danger</button>
+  <button class="btn btn-danger">Destructive</button>
 </div>
 
 ### Code Block
