@@ -13,7 +13,7 @@ permalink: /posts/liminal-salt-theme/
 {% set ed = liminalSalt.editor.dark %}
 {% set el = liminalSalt.editor.light %}
 
-<a href="https://github.com/irvj/liminal-salt" target="_blank">Liminal Salt</a> is an LLM frontend for OpenRouter that I built in Python and Django, but it also spawned a color theme that I've been using for various projects. The overall aesthetic is kind of a muted beige/sage milieu.
+<a href="https://github.com/irvj/liminal-salt-app" target="_blank">Liminal Salt</a> is an LLM frontend for OpenRouter that I built in Python and Django, but it also spawned a color theme that I've been using for various projects. The overall aesthetic is kind of a muted beige/sage milieu.
 
 I'm a lover of Nord as a palette, but Liminal Salt has an earthy vibe that I really enjoy. I hope to keep building on it and maybe soon transition all my tools to using it.
 
