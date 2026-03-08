@@ -15,6 +15,8 @@ It's still evolving, but here's the current palette:
 
 ### Base
 
+The default page background and primary text colors. Foreground Secondary is for supporting text like subtitles and metadata.
+
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#1a1c1b; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
@@ -35,6 +37,8 @@ It's still evolving, but here's the current palette:
 
 ### Muted
 
+A subdued surface for secondary UI like disabled states, chips, and sidebars. Muted Foreground is for placeholder text and de-emphasized labels.
+
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#141615; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
@@ -50,6 +54,8 @@ It's still evolving, but here's the current palette:
 
 ### Card
 
+An elevated surface for cards, dialogs, popovers, and panels that sit above the background.
+
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#242726; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
@@ -64,6 +70,8 @@ It's still evolving, but here's the current palette:
 </div>
 
 ### Accent
+
+The primary action color for buttons, links, and interactive highlights. Accent Foreground is the text color on accent-colored surfaces.
 
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
@@ -85,6 +93,8 @@ It's still evolving, but here's the current palette:
 
 ### Destructive
 
+For destructive actions and error states — delete buttons, form validation errors, error toasts, and danger alerts.
+
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#cc8585; border-radius:8px; margin:0 auto;"></div>
@@ -105,6 +115,8 @@ It's still evolving, but here's the current palette:
 
 ### Success
 
+For confirmations and positive states — saved indicators, valid form fields, success toasts, and completion badges.
+
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#7dba8a; border-radius:8px; margin:0 auto;"></div>
@@ -120,6 +132,8 @@ It's still evolving, but here's the current palette:
 
 ### Warning
 
+For caution states — warnings, deprecation notices, and attention-needed indicators that aren't errors.
+
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
     <div style="width:80px; height:80px; background:#c9a86c; border-radius:8px; margin:0 auto;"></div>
@@ -134,6 +148,8 @@ It's still evolving, but here's the current palette:
 </div>
 
 ### Borders & Focus
+
+Structural and interactive borders. Ring is the focus indicator for keyboard navigation. Input is the default border for form fields. Border is for layout dividers and container edges.
 
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
   <div style="width:100px; text-align:center; font-size:13px;">
