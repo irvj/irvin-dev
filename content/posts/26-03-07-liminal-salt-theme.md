@@ -5,9 +5,15 @@ date: 2026-03-07
 permalink: /posts/liminal-salt-theme/
 ---
 
+{% from "components/swatch.njk" import swatch %}
+{% set d = liminalSalt.ui.dark %}
+{% set l = liminalSalt.ui.light %}
+{% set sd = liminalSalt.syntax.dark %}
+{% set sl = liminalSalt.syntax.light %}
+
 <a href="https://github.com/irvj/liminal-salt" target="_blank">Liminal Salt</a> is an LLM frontend for OpenRouter that I built in Python and Django, but it also spawned a color theme that I've been using for various projects. The overall aesthetic is kind of a muted beige/sage milieu.
 
-I'm a lover of Nord as a palette, but Liminal Salt has an earthy vibe that I really enjoy. I hope to keep building on it and maybe soon transition all my tools to using it. 
+I'm a lover of Nord as a palette, but Liminal Salt has an earthy vibe that I really enjoy. I hope to keep building on it and maybe soon transition all my tools to using it.
 
 It's still evolving, but here's the current palette:
 
@@ -17,298 +23,166 @@ It's still evolving, but here's the current palette:
 
 The default page background and primary text colors. Foreground Secondary is for supporting text like subtitles and metadata.
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#1a1c1b; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
-    <code>#1a1c1b</code>
-    <div>Background</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#e8e4dc; border-radius:8px; margin:0 auto;"></div>
-    <code>#e8e4dc</code>
-    <div>Foreground</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#c5c1b8; border-radius:8px; margin:0 auto;"></div>
-    <code>#c5c1b8</code>
-    <div>Foreground Secondary</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(d.background, "Background", bordered=true) }}
+  {{ swatch(d.foreground, "Foreground") }}
+  {{ swatch(d.foregroundSecondary, "Foreground Secondary") }}
 </div>
 
 ### Muted
 
 A subdued surface for secondary UI like disabled states, chips, and sidebars. Muted Foreground is for placeholder text and de-emphasized labels.
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#141615; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
-    <code>#141615</code>
-    <div>Muted</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#9e9b93; border-radius:8px; margin:0 auto;"></div>
-    <code>#9e9b93</code>
-    <div>Muted Foreground</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(d.muted, "Muted", bordered=true) }}
+  {{ swatch(d.mutedForeground, "Muted Foreground") }}
 </div>
 
 ### Card
 
 An elevated surface for cards, dialogs, popovers, and panels that sit above the background.
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#242726; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
-    <code>#242726</code>
-    <div>Card</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#e8e4dc; border-radius:8px; margin:0 auto;"></div>
-    <code>#e8e4dc</code>
-    <div>Card Foreground</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(d.card, "Card", bordered=true) }}
+  {{ swatch(d.cardForeground, "Card Foreground") }}
 </div>
 
 ### Accent
 
 The primary action color for buttons, links, and interactive highlights. Accent Foreground is the text color on accent-colored surfaces.
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#8fac98; border-radius:8px; margin:0 auto;"></div>
-    <code>#8fac98</code>
-    <div>Accent</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#a3bfac; border-radius:8px; margin:0 auto;"></div>
-    <code>#a3bfac</code>
-    <div>Accent Hover</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#1a1c1b; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
-    <code>#1a1c1b</code>
-    <div>Accent Foreground</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(d.accent, "Accent") }}
+  {{ swatch(d.accentHover, "Accent Hover") }}
+  {{ swatch(d.accentForeground, "Accent Foreground", bordered=true) }}
 </div>
 
 ### Destructive
 
 For destructive actions and error states — delete buttons, form validation errors, error toasts, and danger alerts.
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#cc8585; border-radius:8px; margin:0 auto;"></div>
-    <code>#cc8585</code>
-    <div>Destructive</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#d99292; border-radius:8px; margin:0 auto;"></div>
-    <code>#d99292</code>
-    <div>Destructive Hover</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#1a1c1b; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
-    <code>#1a1c1b</code>
-    <div>Destructive Foreground</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(d.destructive, "Destructive") }}
+  {{ swatch(d.destructiveHover, "Destructive Hover") }}
+  {{ swatch(d.destructiveForeground, "Destructive Foreground", bordered=true) }}
 </div>
 
 ### Success
 
 For confirmations and positive states — saved indicators, valid form fields, success toasts, and completion badges.
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#7dba8a; border-radius:8px; margin:0 auto;"></div>
-    <code>#7dba8a</code>
-    <div>Success</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#1a1c1b; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
-    <code>#1a1c1b</code>
-    <div>Success Foreground</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(d.success, "Success") }}
+  {{ swatch(d.successForeground, "Success Foreground", bordered=true) }}
 </div>
 
 ### Warning
 
 For caution states — warnings, deprecation notices, and attention-needed indicators that aren't errors.
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#c9a86c; border-radius:8px; margin:0 auto;"></div>
-    <code>#c9a86c</code>
-    <div>Warning</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#1a1c1b; border-radius:8px; border:1px solid #2e312f; margin:0 auto;"></div>
-    <code>#1a1c1b</code>
-    <div>Warning Foreground</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(d.warning, "Warning") }}
+  {{ swatch(d.warningForeground, "Warning Foreground", bordered=true) }}
 </div>
 
 ### Borders & Focus
 
 Structural and interactive borders. Ring is the focus indicator for keyboard navigation. Input is the default border for form fields. Border is for layout dividers and container edges.
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#95bebe; border-radius:8px; margin:0 auto;"></div>
-    <code>#95bebe</code>
-    <div>Ring</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#6b7369; border-radius:8px; margin:0 auto;"></div>
-    <code>#6b7369</code>
-    <div>Input</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#2e312f; border-radius:8px; border:1px solid #9e9b93; margin:0 auto;"></div>
-    <code>#2e312f</code>
-    <div>Border</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(d.ring, "Ring") }}
+  {{ swatch(d.input, "Input") }}
+  {{ swatch(d.border, "Border", bordered=true) }}
+</div>
+
+### Syntax
+
+Colors for code highlighting — keywords, strings, types, and other language constructs.
+
+<div class="swatch-row">
+  {{ swatch(sd.keyword, "Keyword") }}
+  {{ swatch(sd.function, "Function") }}
+  {{ swatch(sd.string, "String") }}
+  {{ swatch(sd.number, "Number") }}
+  {{ swatch(sd.type, "Type") }}
+  {{ swatch(sd.comment, "Comment") }}
+  {{ swatch(sd.tag, "Tag") }}
+  {{ swatch(sd.regex, "Regex") }}
 </div>
 
 ## Light Theme
 
 ### Base
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#f5f2ed; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
-    <code>#f5f2ed</code>
-    <div>Background</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#2d2b28; border-radius:8px; margin:0 auto;"></div>
-    <code>#2d2b28</code>
-    <div>Foreground</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#5a5753; border-radius:8px; margin:0 auto;"></div>
-    <code>#5a5753</code>
-    <div>Foreground Secondary</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(l.background, "Background", bordered=true) }}
+  {{ swatch(l.foreground, "Foreground") }}
+  {{ swatch(l.foregroundSecondary, "Foreground Secondary") }}
 </div>
 
 ### Muted
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#ebe7e0; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
-    <code>#ebe7e0</code>
-    <div>Muted</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#6b6762; border-radius:8px; margin:0 auto;"></div>
-    <code>#6b6762</code>
-    <div>Muted Foreground</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(l.muted, "Muted", bordered=true) }}
+  {{ swatch(l.mutedForeground, "Muted Foreground") }}
 </div>
 
 ### Card
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#fdfcfa; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
-    <code>#fdfcfa</code>
-    <div>Card</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#2d2b28; border-radius:8px; margin:0 auto;"></div>
-    <code>#2d2b28</code>
-    <div>Card Foreground</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(l.card, "Card", bordered=true) }}
+  {{ swatch(l.cardForeground, "Card Foreground") }}
 </div>
 
 ### Accent
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#506e58; border-radius:8px; margin:0 auto;"></div>
-    <code>#506e58</code>
-    <div>Accent</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#425f4a; border-radius:8px; margin:0 auto;"></div>
-    <code>#425f4a</code>
-    <div>Accent Hover</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#f5f2ed; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
-    <code>#f5f2ed</code>
-    <div>Accent Foreground</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(l.accent, "Accent") }}
+  {{ swatch(l.accentHover, "Accent Hover") }}
+  {{ swatch(l.accentForeground, "Accent Foreground", bordered=true) }}
 </div>
 
 ### Destructive
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#a54d4d; border-radius:8px; margin:0 auto;"></div>
-    <code>#a54d4d</code>
-    <div>Destructive</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#984242; border-radius:8px; margin:0 auto;"></div>
-    <code>#984242</code>
-    <div>Destructive Hover</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#f5f2ed; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
-    <code>#f5f2ed</code>
-    <div>Destructive Foreground</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(l.destructive, "Destructive") }}
+  {{ swatch(l.destructiveHover, "Destructive Hover") }}
+  {{ swatch(l.destructiveForeground, "Destructive Foreground", bordered=true) }}
 </div>
 
 ### Success
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#3a7346; border-radius:8px; margin:0 auto;"></div>
-    <code>#3a7346</code>
-    <div>Success</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#f5f2ed; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
-    <code>#f5f2ed</code>
-    <div>Success Foreground</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(l.success, "Success") }}
+  {{ swatch(l.successForeground, "Success Foreground", bordered=true) }}
 </div>
 
 ### Warning
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#7d6325; border-radius:8px; margin:0 auto;"></div>
-    <code>#7d6325</code>
-    <div>Warning</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#f5f2ed; border-radius:8px; border:1px solid #ddd8d0; margin:0 auto;"></div>
-    <code>#f5f2ed</code>
-    <div>Warning Foreground</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(l.warning, "Warning") }}
+  {{ swatch(l.warningForeground, "Warning Foreground", bordered=true) }}
 </div>
 
 ### Borders & Focus
 
-<div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#3e5d5d; border-radius:8px; margin:0 auto;"></div>
-    <code>#3e5d5d</code>
-    <div>Ring</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#888379; border-radius:8px; margin:0 auto;"></div>
-    <code>#888379</code>
-    <div>Input</div>
-  </div>
-  <div style="width:100px; text-align:center; font-size:13px;">
-    <div style="width:80px; height:80px; background:#ddd8d0; border-radius:8px; border:1px solid #c5c1b8; margin:0 auto;"></div>
-    <code>#ddd8d0</code>
-    <div>Border</div>
-  </div>
+<div class="swatch-row">
+  {{ swatch(l.ring, "Ring") }}
+  {{ swatch(l.input, "Input") }}
+  {{ swatch(l.border, "Border", bordered=true) }}
+</div>
+
+### Syntax
+
+<div class="swatch-row">
+  {{ swatch(sl.keyword, "Keyword") }}
+  {{ swatch(sl.function, "Function") }}
+  {{ swatch(sl.string, "String") }}
+  {{ swatch(sl.number, "Number") }}
+  {{ swatch(sl.type, "Type") }}
+  {{ swatch(sl.comment, "Comment") }}
+  {{ swatch(sl.tag, "Tag") }}
+  {{ swatch(sl.regex, "Regex") }}
 </div>
 
 ## Accessibility
@@ -347,6 +221,21 @@ Contrast ratios for foreground tokens measured against their own surface.
 | Success Foreground | Success | 7.6 | AAA |
 | Warning Foreground | Warning | 7.6 | AAA |
 
+#### Syntax on surfaces
+
+Contrast ratios for syntax highlighting tokens on the three surface tokens.
+
+| Token | Background | Card | Muted | Level |
+|-------|------------|------|-------|-------|
+| Keyword | 7.0 | 6.1 | 7.4 | AA-AAA |
+| Function | 8.7 | 7.6 | 9.2 | AAA |
+| String | 7.6 | 6.7 | 8.1 | AA-AAA |
+| Number | 7.1 | 6.3 | 7.5 | AAA |
+| Type | 7.8 | 6.9 | 8.3 | AAA |
+| Comment | 6.2 | 5.4 | 6.5 | AA |
+| Tag | 5.9 | 5.2 | 6.3 | AA |
+| Regex | 6.5 | 5.7 | 6.9 | AA |
+
 ### Light Theme
 
 #### On surfaces
@@ -374,6 +263,19 @@ Contrast ratios for foreground tokens measured against their own surface.
 | Destructive Foreground | Destructive | 5.0 | AA |
 | Success Foreground | Success | 5.1 | AA |
 | Warning Foreground | Warning | 5.1 | AA |
+
+#### Syntax on surfaces
+
+| Token | Background | Card | Muted | Level |
+|-------|------------|------|-------|-------|
+| Keyword | 5.1 | 5.5 | 4.6 | AA |
+| Function | 6.3 | 6.9 | 5.7 | AA |
+| String | 5.1 | 5.6 | 4.6 | AA |
+| Number | 5.4 | 5.9 | 4.9 | AA |
+| Type | 5.0 | 5.4 | 4.5 | AA |
+| Comment | 5.0 | 5.5 | 4.6 | AA |
+| Tag | 5.0 | 5.4 | 4.5 | AA |
+| Regex | 5.1 | 5.6 | 4.7 | AA |
 
 ## Examples
 
@@ -405,8 +307,6 @@ Here's how the theme looks applied to common UI elements. <a href="javascript:vo
 </div>
 
 ### Code Block
-
-Dedicated syntax highlighting colors are coming soon. The colors shown here are placeholders using the existing palette.
 
 ```python
 def liminal_salt(palette: dict) -> str:

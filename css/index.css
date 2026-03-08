@@ -582,6 +582,28 @@ img.modal-image:hover {
 	margin-bottom: 24px;
 }
 
+/* Color swatches */
+.swatch-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	margin-bottom: 24px;
+}
+.swatch {
+	width: 100px;
+	text-align: center;
+	font-size: 13px;
+}
+.swatch-color {
+	width: 80px;
+	height: 80px;
+	border-radius: 8px;
+	margin: 0 auto;
+}
+.swatch-bordered {
+	border: 1px solid var(--border);
+}
+
 /* Code blocks */
 pre[class*="language-"] {
 	background: var(--card);
