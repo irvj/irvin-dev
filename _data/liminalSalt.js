@@ -82,6 +82,9 @@ const ui = {
 		ring: "teal400",
 		input: "sage600",
 		border: "stone50",
+		link: "sage400",
+		linkActive: "sage300",
+		linkVisited: "sage400",
 	},
 	light: {
 		background: "beige100",
@@ -104,6 +107,9 @@ const ui = {
 		ring: "teal700",
 		input: "beige700",
 		border: "beige400",
+		link: "sage700",
+		linkActive: "sage800",
+		linkVisited: "sage700",
 	},
 };
 
