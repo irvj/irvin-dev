@@ -219,7 +219,7 @@ All foreground/background pairings meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 
 
 ## Examples
 
-Here's how the theme looks applied to common UI elements. Toggle between light and dark mode to see both variants.
+Here's how the theme looks applied to common UI elements. <a href="javascript:void(0)" onclick="document.getElementById('theme-toggle').click()">Toggle light/dark mode</a> to see both variants.
 
 ### Buttons
 
