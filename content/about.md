@@ -14,7 +14,7 @@ const eleventyNavigation = {
 - Current: software engineer
 - Previous: romance novelist
 - Next: some amalgam of both
-- Tools: HHKB, Neovim, Zed, Ghostty, Claude Code
+- Tools: hhkb, neovim, ghostty, tmux, claude
 - Likes: simplicity, vinyl, health, solitude
 - Dislikes: lack of agency, fake urgency
 
