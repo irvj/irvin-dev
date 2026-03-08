@@ -107,6 +107,16 @@ article h1 {
 a[href] {
 	color: var(--link);
 }
+
+/* Heading anchor links (override web component opacity with theme color) */
+.ha-placeholder {
+	opacity: 1 !important;
+	color: var(--foreground-muted);
+}
+
+.ha {
+	color: var(--foreground-muted);
+}
 a[href]:visited {
 	color: var(--link-visited);
 }
