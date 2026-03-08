@@ -253,6 +253,23 @@ Here's how the theme looks applied to common UI elements. <a href="javascript:vo
   <button class="btn btn-danger">Destructive</button>
 </div>
 
+### Form Fields
+
+<div class="form-row">
+  <div class="form-field">
+    <label>Name</label>
+    <input type="text" placeholder="Enter your name">
+  </div>
+  <div class="form-field">
+    <label>Email</label>
+    <input type="email" placeholder="you@example.com">
+  </div>
+  <div class="form-field">
+    <label>Message</label>
+    <textarea rows="3" placeholder="Write something..."></textarea>
+  </div>
+</div>
+
 ### Code Block
 
 Dedicated syntax highlighting colors are coming soon. The colors shown here are placeholders using the existing palette.

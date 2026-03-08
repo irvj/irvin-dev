@@ -545,6 +545,43 @@ img.modal-image:hover {
 	margin-bottom: 24px;
 }
 
+/* Form fields */
+.form-field {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+.form-field label {
+	font-size: 14px;
+	color: var(--foreground);
+}
+.form-field input,
+.form-field textarea {
+	width: 100%;
+	padding: 8px 12px;
+	font-size: 14px;
+	font-family: inherit;
+	color: var(--foreground);
+	background: var(--background);
+	border: 1.5px solid var(--input);
+	border-radius: 6px;
+	outline: none;
+}
+.form-field input:focus,
+.form-field textarea:focus {
+	border-color: var(--ring);
+}
+.form-field textarea {
+	resize: vertical;
+}
+.form-row {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	max-width: 360px;
+	margin-bottom: 24px;
+}
+
 /* Code blocks */
 pre[class*="language-"] {
 	background: var(--card);
