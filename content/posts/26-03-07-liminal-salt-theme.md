@@ -371,18 +371,18 @@ Here's how the theme looks applied to common UI elements. <a href="javascript:vo
 
 ### Form Fields
 
-<div class="form-row">
+<div class="form-row" role="group" aria-label="Example form fields (non-functional)">
   <div class="form-field">
-    <label>Name</label>
-    <input type="text" placeholder="Enter your name">
+    <label for="demo-name">Name</label>
+    <input id="demo-name" type="text" placeholder="Enter your name" aria-description="Demo field, not submitted">
   </div>
   <div class="form-field">
-    <label>Email</label>
-    <input type="email" placeholder="you@example.com">
+    <label for="demo-email">Email</label>
+    <input id="demo-email" type="email" placeholder="you@example.com" aria-description="Demo field, not submitted">
   </div>
   <div class="form-field">
-    <label>Message</label>
-    <textarea rows="3" placeholder="Write something..."></textarea>
+    <label for="demo-message">Message</label>
+    <textarea id="demo-message" rows="3" placeholder="Write something..." aria-description="Demo field, not submitted"></textarea>
   </div>
 </div>
 
