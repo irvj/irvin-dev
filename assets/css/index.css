@@ -251,6 +251,7 @@ header {
 	width: 1.25rem;
 	height: 1.25rem;
 	stroke: var(--link);
+	stroke-width: 2.5;
 }
 
 .theme-toggle-btn:hover {
@@ -269,6 +270,7 @@ header {
 	margin-left: auto;
 }
 .nav-item {
+	font-weight: 700;
 	border-radius: 6px;
 	padding: 0.5em;
 	transition: background-color 0.2s ease;
