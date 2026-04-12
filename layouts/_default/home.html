@@ -14,6 +14,13 @@
 		</ul>
 
 		{{ $latest.Content }}
+
+		{{ if gt (len $posts) 1 }}
+		{{ $prev := index $posts 1 }}
+		<ul class="links-nextprev">
+			<li class="links-nextprev-prev">&larr; Previous<br> <a href="{{ $prev.RelPermalink }}">{{ $prev.Title }}</a></li>
+		</ul>
+		{{ end }}
 	</article>
 	{{ else }}
 	<p>No posts yet.</p>
