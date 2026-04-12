@@ -1,209 +1,121 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
 ## Project Overview
 
-This is an Eleventy (11ty) v3 static site generator blog based on the eleventy-base-blog starter template. The site generates a blog with posts, tags, feeds, and navigation.
+A Hugo static site / blog deployed on Cloudflare Pages. Hugo version: 0.160.1.
 
-## Build and Development Commands
+## Commands
 
 ```bash
-# Development server with hot reload
-npm start
-
-# Production build (excludes drafts)
-npm run build
-
-# Debug mode with verbose logging
-npm run debug
-npm run debugstart  # with dev server
-
-# Benchmark build performance
-npm run benchmark
+hugo server -D    # dev server with drafts
+hugo              # production build (output: public/)
+hugo new posts/YYYY-MM-DD-my-post.md  # new post from archetype
 ```
 
-## Architecture
+## Directory Structure
 
-### Directory Structure
+```
+hugo.toml                  # all site config (params, menus, taxonomies, markup, output formats)
+archetypes/posts.md        # template for new posts
+content/
+  _index.md                # home page content
+  about.md                 # about page (uses github-profile shortcode)
+  posts/
+    _index.md              # posts section index
+    YYYY-MM-DD-slug.md     # blog posts (date-prefixed filenames, slug in front matter)
+  feed/
+    _index.md              # drives Atom feed output
+layouts/
+  _default/
+    baseof.html            # base template (inlines all CSS, loads JS)
+    home.html              # home page — shows latest post
+    single.html            # generic single page
+    list.html              # generic list page
+    home.favicon.svg       # dynamic favicon from theme colors
+    _markup/
+      render-heading.html  # adds anchor links to headings
+      render-image.html    # image optimization (avif/webp) for page bundle images
+  posts/
+    single.html            # post layout with prev/next navigation
+    list.html              # posts listing
+  partials/
+    postslist.html         # reusable post list component
+    modal.html             # modal dialog component (called with dict params)
+  shortcodes/
+    github-profile.html    # GitHub profile widget (client-side API fetch)
+    swatch.html            # color swatch for theme showcase post
+  feed/
+    list.atom.xml          # custom Atom feed template
+  404.html                 # 404 page
+assets/css/
+  index.css                # main stylesheet (semantic CSS variables)
+  chroma.css               # syntax highlighting (Chroma classes mapped to theme variables)
+  message-box.css          # message box styles
+  themes/
+    liminal-salt.css       # active theme — defines :root, [data-theme="dark"], [data-theme="light"]
+    nord.css               # alternate theme
+static/
+  js/                      # theme-toggle.js, modal.js, image-modal.js (vanilla JS, no framework)
+  feed/pretty-atom-feed.xsl
+```
 
-- **content/**: Source content and templates (input directory)
-  - `posts/`: Blog post markdown files
-  - `*.njk`: Page templates (index, tags, sitemap)
-  - `content.11tydata.js`: Global data cascade for all content
-  - `posts/posts.11tydata.js`: Data cascade specific to blog posts
+## Key Config (hugo.toml)
 
-- **_includes/**: Template partials and layouts
-  - `layouts/`: Base layout templates (base.njk, home.njk, post.njk)
-  - `components/`: Reusable components (modal.njk)
-  - `postslist.njk`: Reusable component for rendering post lists
-  - `github-profile.njk`: GitHub profile widget with API integration
+- **Permalinks**: posts use `/posts/:slug/` — slug comes from front matter, not filename
+- **Markup**: Goldmark with `unsafe = true` (raw HTML in markdown). Chroma highlighting with CSS classes (`noClasses = false`)
+- **Menus**: `[[menus.main]]` entries for nav (about, posts)
+- **Theme params**: `[params.theme]` stores `name`, `accent`, `background` — used by favicon template and CSS loading
+- **Output formats**: HTML + RSS + Favicon on home, custom Atom format for `/feed/feed.xml`
 
-- **_data/**: Global data files
-  - `metadata.js`: Site metadata (title, URL, author, description)
-  - `theme.js`: Active theme config — reads colors from the active theme's CSS file
-  - `eleventyDataSchema.js`: Zod schema validation for front matter
+## Adding a New Post
 
-- **_config/**: Eleventy configuration modules
-  - `filters.js`: Custom template filters (date formatting, array manipulation)
+```bash
+hugo new posts/YYYY-MM-DD-my-post.md
+```
 
-- **css/**: Stylesheets (included via `{% include %}` in templates, not passthrough-copied)
-  - `index.css`: Main stylesheet using semantic CSS variables
-  - `message-box.css`: Message box styles
-  - `prism-diff.css`: Code diff highlighting styles
-  - `themes/`: Theme CSS files defining semantic color variables
-    - `nord.css`: Nord color palette
-    - `liminal-salt.css`: Liminal Salt color palette
+Then edit the front matter:
 
-- **public/**: Static assets copied directly to output
-  - `js/`: JavaScript files (theme-toggle.js, modal.js, image-modal.js)
-
-- **_site/**: Generated output directory (not tracked in git)
-
-### Key Configuration (eleventy.config.js)
-
-- **Input directory**: `content/`
-- **Output directory**: `_site/`
-- **Template formats**: Markdown, Nunjucks, HTML, Liquid, 11ty.js
-- **Markdown preprocessor**: Nunjucks
-- **HTML preprocessor**: Nunjucks
-
-### Plugins and Features
-
-1. **Drafts system**: Posts with `draft: true` in front matter are:
-   - Marked with "(draft)" suffix in dev mode
-   - Excluded from production builds (ELEVENTY_RUN_MODE=build)
-
-2. **Image optimization**: Automatic image transform to avif/webp formats with lazy loading
-
-3. **Content bundling**: CSS and JS bundles extracted from `<style>` and `<script>` tags
-
-4. **RSS/Atom feed**: Generated at `/feed/feed.xml` (configurable in config)
-
-5. **Syntax highlighting**: PrismJS via @11ty/eleventy-plugin-syntaxhighlight
-
-6. **Navigation**: Site navigation managed via @11ty/eleventy-navigation
-
-7. **View Transitions**: Cross-document view transitions enabled for smooth page navigation (50ms duration)
-
-8. **Theme System**:
-   - Multi-theme support with semantic CSS variables
-   - Active theme set in `_data/theme.js` (currently `"liminal-salt"`)
-   - Theme CSS files in `css/themes/` define `:root`, `[data-theme="dark"]`, and `[data-theme="light"]` blocks
-   - Light/dark mode toggle with theme preference stored in localStorage
-   - Respects system `prefers-color-scheme` as default
-   - No CSS transitions on theme change (handled by View Transitions API)
-   - Favicon generated at build time from theme colors (`content/favicon.njk`)
-
-9. **Modal System**:
-   - Reusable modal component (`components/modal.njk`)
-   - Automatic image modals via `modal-image` class
-   - Accessible with keyboard navigation, focus trap, ESC to close
-   - Click backdrop or X button to close
-
-10. **GitHub Integration**:
-    - Dynamic GitHub profile widget on About page
-    - Fetches profile data via GitHub API
-    - Avatar image opens in modal on click
-
-### Data Cascade
-
-Eleventy uses a data cascade system where data flows from:
-1. Global data files (`_data/*.js`)
-2. Directory data files (`*.11tydata.js`)
-3. Template front matter
-
-Use `.11tydata.js` files to set defaults for entire directories (e.g., layout, permalink patterns).
-
-### Custom Filters
-
-Available in templates via `_config/filters.js`:
-- `readableDate`: Format dates with Luxon
-- `htmlDateString`: ISO date strings for HTML
-- `head`: Get first n elements of array
-- `filterTagList`: Remove "all" and "posts" from tag lists
-- `sortAlphabetically`: Sort strings alphabetically
-
-## Common Development Tasks
-
-### Adding a New Blog Post
-
-Create a markdown file in `content/posts/` with front matter:
 ```yaml
 ---
 title: "Post Title"
 description: "Post description"
-date: 2025-10-28
-tags:
-  - tag1
-  - tag2
-draft: false  # Optional, set to true to exclude from production builds
+date: YYYY-MM-DD
+slug: my-post
+tags: [tag1, tag2]
+draft: false
 ---
 ```
 
-### Modifying Site Metadata
+Filename convention: `YYYY-MM-DD-slug.md` for chronological sorting in the directory. The `slug` field determines the URL.
 
-Edit `_data/metadata.js` to change site title, URL, author info, or description. This data is available in all templates as `metadata.title`, `metadata.author.name`, etc.
+## Theme System
 
-### Adding Custom Filters
-
-Add new filters to `_config/filters.js` using `eleventyConfig.addFilter(name, function)`.
-
-### Working with Images
-
-Place images in content directories. The image transform plugin automatically optimizes them. To opt-out specific images, use standard HTML: `<img eleventy:ignore src="...">`.
-
-### Path Prefix for Subdirectories
-
-If deploying to a subdirectory, uncomment and set `pathPrefix` in the config object at the bottom of `eleventy.config.js`. Use with the HtmlBasePlugin to automatically transform URLs.
-
-### Using Modals
-
-**Reusable Modal Component:**
-```njk
-{% from "components/modal.njk" import modal %}
-{{ modal("modal-id", "Modal Title", "<p>Content here</p>") }}
-<button onclick="openModal('modal-id')">Open Modal</button>
-```
-
-**Automatic Image Modals:**
-Add `modal-image` class to any image to make it clickable with automatic modal:
-```html
-<img src="image.jpg" alt="Description" class="modal-image">
-```
-
-The image modal system:
-- Automatically detects all images with `modal-image` class
-- Creates unique modals for each image
-- Uses image `alt` text as modal title
-- Shows full-resolution image in modal
-- Keyboard accessible (Enter/Space to open, ESC to close)
+- Active theme set via `params.theme.name` in `hugo.toml` (currently `"liminal-salt"`)
+- Theme CSS in `assets/css/themes/` defines CSS custom properties for `:root`, `[data-theme="dark"]`, and `[data-theme="light"]`
+- Light/dark toggle via `static/js/theme-toggle.js` with localStorage persistence, respects `prefers-color-scheme`
+- Favicon uses `params.theme.accent` and `params.theme.background` from config
 
 ### Switching Themes
 
-Change the `active` variable in `_data/theme.js` to switch themes (e.g., `"nord"` or `"liminal-salt"`). The favicon and all CSS variables update automatically at build time.
+1. Change `params.theme.name` to the theme name (e.g., `"nord"`)
+2. Update `params.theme.accent` and `params.theme.background` to match
+3. Rebuild
 
 ### Adding a New Theme
 
-1. Create a CSS file in `css/themes/` (e.g., `my-theme.css`)
-2. Define `:root`, `[data-theme="dark"]`, and `[data-theme="light"]` blocks with these semantic variables:
-   - `--background`, `--foreground`, `--foreground-muted`
-   - `--accent`, `--accent-hover`, `--accent-light`
-   - `--border`, `--hover`
-   - `--link`, `--link-active`, `--link-visited`
-   - `--message-bg`, `--message-text`
-   - `--diff-deleted`, `--diff-inserted`
-3. Set the `active` variable in `_data/theme.js` to the new theme name
+1. Create `assets/css/themes/my-theme.css` with `:root`, `[data-theme="dark"]`, and `[data-theme="light"]` blocks
+2. Required CSS variables: `--background`, `--foreground`, `--foreground-secondary`, `--accent`, `--accent-hover`, `--card`, `--border`, `--link`, `--link-active`, `--link-visited`, plus `--syntax-*` variables for code highlighting
+3. Set `params.theme.name` in `hugo.toml`
 
-### Theme Toggle
+## Modals
 
-The site uses a light/dark mode toggle. Theme preference is stored in localStorage and respects system `prefers-color-scheme` as the default. The toggle button is in the header.
-
-### GitHub Profile Widget
-
-The About page includes a dynamic GitHub profile widget that fetches data from the GitHub API. To use it:
-```njk
-{% include "github-profile.njk" %}
+**From a template:**
+```go-html-template
+{{ partial "modal.html" (dict "id" "my-modal" "title" "Title" "content" "<p>Body</p>") }}
 ```
 
-The widget displays the user's avatar, name, bio, and a link to their GitHub profile. The avatar image is clickable and opens in a modal.
+**Image modals:** Add `modal-image` class to any `<img>` — `image-modal.js` handles the rest automatically.
+
+## Deployment
+
+Cloudflare Pages with build command `hugo`, output directory `public`, and `HUGO_VERSION=0.160.1` environment variable.
