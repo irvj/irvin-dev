@@ -15,7 +15,7 @@ title = "irvin.dev"
   accent = "#8fac98"
   background = "#1a1c1b"
 
-# Menus (replaces eleventy-navigation)
+# Menus
 [[menus.main]]
   name = "about"
   url = "/about/"
