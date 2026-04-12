@@ -138,7 +138,7 @@ brew install hugo
 hugo version
 ```
 
-Minimum Hugo version: **0.128.0+** (for latest features and render hooks).
+Minimum Hugo version: **0.160.1** (latest release as of April 2026).
 
 ### Step 2: Scaffold Hugo Project
 
@@ -172,9 +172,13 @@ irvin-dev/
 │   │   ├── baseof.html
 │   │   ├── home.html
 │   │   ├── list.html
-│   │   └── single.html
+│   │   ├── single.html
+│   │   └── _markup/
+│   │       ├── render-heading.html
+│   │       └── render-image.html
 │   ├── posts/
-│   │   └── single.html
+│   │   ├── single.html
+│   │   └── list.html
 │   ├── partials/
 │   │   ├── head.html
 │   │   ├── header.html
@@ -182,9 +186,8 @@ irvin-dev/
 │   │   ├── postslist.html
 │   │   ├── modal.html
 │   │   └── github-profile.html
-│   ├── _default/
-│   │   └── _markup/
-│   │       └── render-heading.html
+│   ├── shortcodes/
+│   │   └── github-profile.html
 │   ├── 404.html
 │   └── index.xml          # custom RSS template (optional)
 ├── static/
@@ -219,16 +222,15 @@ title = "irvin.dev"
   background = "#1a1c1b"
 
 # Menus (replaces eleventy-navigation)
-[menus]
-  [[menus.main]]
-    name = "Posts"
-    url = "/posts/"
-    weight = 3
+[[menus.main]]
+  name = "About"
+  url = "/about/"
+  weight = 2
 
-  [[menus.main]]
-    name = "About"
-    url = "/about/"
-    weight = 2
+[[menus.main]]
+  name = "Posts"
+  url = "/posts/"
+  weight = 3
 
 # Taxonomies
 [taxonomies]
@@ -385,7 +387,7 @@ This replaces `content/index.njk` — shows the latest blog post:
 
 ```go-html-template
 {{ define "main" }}
-  {{ $posts := where site.RegularPages "Section" "posts" }}
+  {{ $posts := (where site.RegularPages "Section" "posts").ByDate.Reverse }}
   {{ $latest := index $posts 0 }}
   {{ if $latest }}
   <article>
@@ -448,20 +450,12 @@ This replaces `_includes/layouts/post.njk`:
 
   {{ .Content }}
 
-  {{ $pages := where site.RegularPages "Section" "posts" }}
-  {{ with .PrevInSection }}
-    {{ $.Scratch.Set "prevPost" . }}
-  {{ end }}
-  {{ with .NextInSection }}
-    {{ $.Scratch.Set "nextPost" . }}
-  {{ end }}
-
-  {{ if or ($.Scratch.Get "prevPost") ($.Scratch.Get "nextPost") }}
+  {{ if or (.PrevInSection) (.NextInSection) }}
   <ul class="links-nextprev">
-    {{ with $.Scratch.Get "prevPost" }}
+    {{ with .PrevInSection }}
       <li class="links-nextprev-prev">&larr; Previous<br> <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{ end }}
-    {{ with $.Scratch.Get "nextPost" }}
+    {{ with .NextInSection }}
       <li class="links-nextprev-next">Next &rarr;<br><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{ end }}
   </ul>
@@ -697,7 +691,9 @@ Hugo generates RSS 2.0 at `/index.xml`. Update the `<link rel="alternate">` in `
 
 **Option B: Custom Atom feed at `/feed/feed.xml`**
 
-Create a custom output format in `hugo.toml`:
+Hugo output formats don't create subdirectories from `baseName`, so to produce the feed at `/feed/feed.xml`, create a dedicated section with a custom output format.
+
+Add to `hugo.toml`:
 
 ```toml
 [mediaTypes]
@@ -710,12 +706,19 @@ Create a custom output format in `hugo.toml`:
     baseName = "feed"
     rel = "alternate"
     isPlainText = false
-
-[outputs]
-  home = ["HTML", "Atom"]
 ```
 
-Then create `layouts/_default/home.atom.xml`:
+Create `content/feed/_index.md`:
+```yaml
+---
+title: "Feed"
+outputs: ["Atom"]
+sitemap:
+  disable: true
+---
+```
+
+Then create `layouts/feed/list.atom.xml`:
 
 ```go-html-template
 <?xml version="1.0" encoding="utf-8"?>
@@ -730,14 +733,14 @@ Then create `layouts/_default/home.atom.xml`:
   <author>
     <name>{{ site.Params.author.name }}</name>
   </author>
-  {{ $pages := where site.RegularPages "Section" "posts" }}
+  {{ $pages := (where site.RegularPages "Section" "posts").ByDate.Reverse }}
   {{ range first 10 $pages }}
   <entry>
     <title>{{ .Title }}</title>
     <link href="{{ .Permalink }}" />
     <id>{{ .Permalink }}</id>
     <updated>{{ .Date.Format "2006-01-02T15:04:05Z" }}</updated>
-    <content type="html">{{ .Content | html }}</content>
+    <content type="html"><![CDATA[{{ .Content }}]]></content>
   </entry>
   {{ end }}
 </feed>
@@ -846,6 +849,8 @@ Instead of:
 content/posts/my-post.md
 ```
 
+**Important:** Any markdown images that reference paths outside the page bundle (e.g., absolute paths or paths to other directories) will silently fall through to the fallback `<img>` tag in the render hook — they'll still render but won't get avif/webp optimization. After migration, verify that all images are properly colocated as page bundle resources.
+
 #### Modal Images
 
 Images with `class="modal-image"` are set via raw HTML in markdown, not via markdown image syntax. These bypass the render hook and work as-is with `image-modal.js`. For these, either:
@@ -873,7 +878,7 @@ Images with `class="modal-image"` are set via raw HTML in markdown, not via mark
 | `content/index.njk` | `layouts/_default/home.html` + `content/_index.md` | Home page split into layout + content |
 | `content/tags.njk` | *(built-in)* | Hugo taxonomy list |
 | `content/tag-pages.njk` | *(built-in)* | Hugo taxonomy term pages |
-| `content/archive.njk` | `content/posts/_index.md` + `layouts/posts/list.html` | Posts section list |
+| `content/archive.njk` | `content/posts/_index.md` + `layouts/posts/list.html` | Posts section list (URL changes from `/archive/` to `/posts/`) |
 | `content/sitemap.xml.njk` | *(built-in)* | Hugo generates sitemap |
 | `content/404.md` | `layouts/404.html` | 404 page |
 | `content/favicon.njk` | `layouts/_default/home.favicon.svg` | Custom output format |
@@ -1036,16 +1041,7 @@ Replace the PrismJS `.token.*` rules in `index.css` with Chroma equivalents. Cre
 
 ### Diff Highlighting
 
-The `css/prism-diff.css` handles PrismJS diff syntax (`language-diff-*`). Hugo uses Chroma's diff lexer which outputs `.gd` (deleted) and `.gi` (inserted) classes. The mapping above covers this. The diff prefix unselectable behavior can be preserved with:
-
-```css
-/* Diff prefix characters */
-.highlight .gd .x,
-.highlight .gi .x {
-  -webkit-user-select: none;
-  user-select: none;
-}
-```
+The `css/prism-diff.css` handles PrismJS diff syntax (`language-diff-*`). Hugo uses Chroma's diff lexer which outputs `.gd` (deleted) and `.gi` (inserted) classes. The mapping above covers this. Note that Chroma does not output separate child classes for diff prefix characters (`+`/`-`), so the unselectable prefix behavior from `prism-diff.css` cannot be directly replicated with CSS alone. If needed, a custom code block render hook (`render-codeblock.html`) could wrap prefix characters in a `<span>` with `user-select: none`.
 
 ### Removing PrismJS
 
@@ -1070,7 +1066,7 @@ The current site deploys on Cloudflare Pages. Update the build configuration:
 |---------|-----------|------------|
 | Build command | `npx @11ty/eleventy` | `hugo` |
 | Output directory | `_site` | `public` |
-| Environment variable | — | `HUGO_VERSION=0.145.0` (or latest) |
+| Environment variable | — | `HUGO_VERSION=0.160.1` (or latest) |
 
 Cloudflare Pages has native Hugo support. Set `HUGO_VERSION` in environment variables to pin the version.
 

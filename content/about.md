@@ -1,13 +1,10 @@
----js
-const eleventyNavigation = {
-	key: "about",
-	order: 2
-};
+---
+title: About
 ---
 
 # About
 
-{% include "github-profile.njk" %}
+{{< github-profile >}}
 
 ## Me
 
@@ -20,7 +17,7 @@ const eleventyNavigation = {
 
 ## This Site
 
-- Built with: <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">11ty</a>
+- Built with: <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>
 - Repo: <a href="https://github.com/irvj/irvin-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
 - Deployed: <a href="https://pages.cloudflare.com" target="_blank" rel="noopener noreferrer">Cloudflare Pages</a>
 - Theme: <a href="/posts/liminal-salt-theme" rel="noopener noreferrer">Liminal Salt</a>

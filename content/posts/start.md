@@ -1,0 +1,14 @@
+---
+title: Start
+description: Let's begin.
+date: 2025-12-13
+slug: start
+---
+
+This site is built using <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">11ty</a>. Repo at <a href="https://github.com/irvj/irvin-dev" target="_blank" rel="noopener noreferrer">GitHub</a>. Deployed using <a href="https://pages.cloudflare.com" target="_blank" rel="noopener noreferrer">Cloudflare Pages</a>. The theme is <a href="https://www.nordtheme.com" target="_blank" rel="noopener noreferrer">Nord</a>. I don't think any of these things will change. If they do, I won't update this post. I'll leave it as is for posterity.
+
+If you want to know about me, check out the [about page](/about/). That page, on the other hand, will probably get updated on occasion.
+
+I'm not entirely sure what's next. But that's where I'm headed anyway.
+
+Let's begin.

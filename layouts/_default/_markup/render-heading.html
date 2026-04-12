@@ -1,0 +1,4 @@
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">
+  {{ .Text }}
+  <a class="ha" href="#{{ .Anchor | safeURL }}" aria-hidden="true">#</a>
+</h{{ .Level }}>

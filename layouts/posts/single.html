@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article>
+	<h1>{{ .Title }}</h1>
+
+	<ul class="post-metadata">
+		<li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 January 2006" }}</time></li>
+		{{ range .Params.tags }}
+		{{ $tag := . | urlize }}
+		<li><a href="/tags/{{ $tag }}/" class="post-tag">{{ . }}</a></li>
+		{{ end }}
+	</ul>
+
+	{{ .Content }}
+
+	{{ if or (.PrevInSection) (.NextInSection) }}
+	<ul class="links-nextprev">
+		{{ with .PrevInSection }}
+		<li class="links-nextprev-prev">&larr; Previous<br> <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+		{{ end }}
+		{{ with .NextInSection }}
+		<li class="links-nextprev-next">Next &rarr;<br><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+		{{ end }}
+	</ul>
+	{{ end }}
+</article>
+{{ end }}

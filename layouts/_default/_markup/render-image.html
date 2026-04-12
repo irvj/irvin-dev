@@ -1,0 +1,17 @@
+{{ $img := .Page.Resources.GetMatch .Destination }}
+{{ if $img }}
+  {{ $webp := $img.Resize (printf "%dx webp" $img.Width) }}
+  {{ $avif := $img.Resize (printf "%dx avif" $img.Width) }}
+  <picture>
+    <source srcset="{{ $avif.RelPermalink }}" type="image/avif">
+    <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+    <img src="{{ $img.RelPermalink }}" alt="{{ .Text }}" loading="lazy" decoding="async"
+      {{ with $img.Width }}width="{{ . }}"{{ end }}
+      {{ with $img.Height }}height="{{ . }}"{{ end }}
+      {{ with .Title }}title="{{ . }}"{{ end }}>
+  </picture>
+{{ else }}
+  {{/* Fallback for external images or unresolved paths */}}
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" decoding="async"
+    {{ with .Title }}title="{{ . }}"{{ end }}>
+{{ end }}

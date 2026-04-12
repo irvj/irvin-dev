@@ -1,0 +1,88 @@
+baseURL = "https://irvin.dev/"
+languageCode = "en"
+title = "irvin.dev"
+
+[params]
+  description = ""
+
+[params.author]
+  name = "Joseph Irvin"
+  email = ""
+  url = "https://irvin.dev"
+
+[params.theme]
+  name = "liminal-salt"
+  accent = "#8fac98"
+  background = "#1a1c1b"
+
+# Menus (replaces eleventy-navigation)
+[[menus.main]]
+  name = "About"
+  url = "/about/"
+  weight = 2
+
+[[menus.main]]
+  name = "Posts"
+  url = "/posts/"
+  weight = 3
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+
+# Permalinks
+[permalinks]
+  [permalinks.page]
+    posts = "/posts/:slug/"
+
+# Markdown / Goldmark
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+  [markup.highlight]
+    style = "monokailight"
+    noClasses = false
+    tabWidth = 2
+    lineNos = false
+    guessSyntax = false
+
+# Output formats
+[mediaTypes]
+  [mediaTypes."application/atom+xml"]
+    suffixes = ["xml"]
+
+  [mediaTypes."image/svg+xml"]
+    suffixes = ["svg"]
+
+[outputFormats]
+  [outputFormats.Atom]
+    mediaType = "application/atom+xml"
+    baseName = "feed"
+    rel = "alternate"
+    isPlainText = true
+
+  [outputFormats.Favicon]
+    mediaType = "image/svg+xml"
+    baseName = "favicon"
+    rel = "icon"
+    isPlainText = true
+    notAlternative = true
+
+[outputs]
+  home = ["HTML", "RSS", "Favicon"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
+# RSS configuration
+[services]
+  [services.rss]
+    limit = 10
+
+# Sitemap
+[sitemap]
+  changeFreq = ""
+  filename = "sitemap.xml"
+  priority = -1

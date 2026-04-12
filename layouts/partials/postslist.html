@@ -1,0 +1,8 @@
+<ol class="postlist">
+{{ range . }}
+	<li class="postlist-item">
+		<a href="{{ .RelPermalink }}" class="postlist-link">{{ if .Title }}{{ .Title }}{{ else }}<code>{{ .RelPermalink }}</code>{{ end }}</a>
+		<time class="postlist-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 January 2006" }}</time>
+	</li>
+{{ end }}
+</ol>

@@ -1,0 +1,21 @@
+{{ define "main" }}
+	{{ $posts := (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+	{{ $latest := index $posts 0 }}
+	{{ if $latest }}
+	<article>
+		<h1>{{ $latest.Title }}</h1>
+
+		<ul class="post-metadata">
+			<li><time datetime="{{ $latest.Date.Format "2006-01-02" }}">{{ $latest.Date.Format "02 January 2006" }}</time></li>
+			{{ range $latest.Params.tags }}
+			{{ $tag := . | urlize }}
+			<li><a href="/tags/{{ $tag }}/" class="post-tag">{{ . }}</a></li>
+			{{ end }}
+		</ul>
+
+		{{ $latest.Content }}
+	</article>
+	{{ else }}
+	<p>No posts yet.</p>
+	{{ end }}
+{{ end }}

@@ -1,7 +1,0 @@
-{% macro swatch(hex, label, bordered=false) -%}
-<div class="swatch">
-  <div class="swatch-color{% if bordered %} swatch-bordered{% endif %}" style="background:{{ hex }}"></div>
-  <code>{{ hex }}</code>
-  <div>{{ label }}</div>
-</div>
-{%- endmacro %}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/feed/pretty-atom-feed.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.Title }}</title>
+  <subtitle>{{ site.Params.description }}</subtitle>
+  <link href="{{ site.BaseURL }}" />
+  <link href="{{ "feed/feed.xml" | absURL }}" rel="self" />
+  <updated>{{ now.Format "2006-01-02T15:04:05Z" }}</updated>
+  <id>{{ site.BaseURL }}</id>
+  <author>
+    <name>{{ site.Params.author.name }}</name>
+  </author>
+  {{ $pages := (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+  {{ range first 10 $pages }}
+  <entry>
+    <title>{{ .Title }}</title>
+    <link href="{{ .Permalink }}" />
+    <id>{{ .Permalink }}</id>
+    <updated>{{ .Date.Format "2006-01-02T15:04:05Z" }}</updated>
+    <content type="html"><![CDATA[{{ .Content }}]]></content>
+  </entry>
+  {{ end }}
+</feed>
