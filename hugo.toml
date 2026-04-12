@@ -17,12 +17,12 @@ title = "irvin.dev"
 
 # Menus (replaces eleventy-navigation)
 [[menus.main]]
-  name = "About"
+  name = "about"
   url = "/about/"
   weight = 2
 
 [[menus.main]]
-  name = "Posts"
+  name = "posts"
   url = "/posts/"
   weight = 3
 
