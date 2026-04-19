@@ -5,9 +5,9 @@ date: 2026-03-07
 slug: liminal-salt-theme
 ---
 
-<a href="https://github.com/irvj/liminal-salt-app" target="_blank">Liminal Salt</a> is an LLM frontend for OpenRouter that I built in Python and Django, but it also spawned a color theme that I've been using for various projects. The overall aesthetic is inspired by greige, kind of a beige/sage/stone milieu. I've tried to make it accessible and comfortable for reading.
+<a href="https://github.com/irvj/liminal-salt" target="_blank">Liminal Salt</a> is an LLM frontend for OpenRouter that I built in Python and Django, but it also spawned a color theme that I've been using for various projects. The overall aesthetic is inspired by greige, kind of a beige/sage/stone milieu. I've tried to make it accessible and comfortable for reading.
 
-Liminal Salt has an earthy vibe that I really enjoy. I'm transitioning all my tools to use it. Check out the theme on GitHub: <a href="https://github.com/irvj/liminal-salt" target="_blank">liminal-salt</a>
+Liminal Salt has an earthy vibe that I really enjoy. I'm transitioning all my tools to use it. Check out the theme on GitHub: <a href="https://github.com/irvj/liminal-salt-theme" target="_blank">liminal-salt-theme</a>
 
 It's still evolving, but here's the current palette:
 
@@ -431,4 +431,4 @@ function parseHex(value) {
 
 ### Inline Code & Links
 
-Here's some `inline code` alongside a [link to the repository](https://github.com/irvj/liminal-salt). The theme's `--accent` variable drives both the link color and the code highlight, keeping everything visually cohesive across `light` and `dark` modes.
+Here's some `inline code` alongside a [link to the repository](https://github.com/irvj/liminal-salt-theme). The theme's `--accent` variable drives both the link color and the code highlight, keeping everything visually cohesive across `light` and `dark` modes.
