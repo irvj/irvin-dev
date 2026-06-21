@@ -11,8 +11,8 @@ title: About
 - Current: software engineer
 - Previous: romance novelist
 - Next: some amalgam of both
-- Tools: hhkb, neovim, ghostty, tmux, claude
-- Likes: simplicity, vinyl, health, solitude
+- Tools: hhkb, neovim, ghostty, tmux, pi
+- Likes: simplicity, solitude, salubrity
 - Dislikes: lack of agency, fake urgency
 
 ## This Site
